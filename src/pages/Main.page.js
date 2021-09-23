@@ -5,9 +5,10 @@ import Showcase from '../components/Showcase';
 
 function MainPage() {
   return (
-    <div className="">
+    <div className="relative">
       <Header />
       <Showcase />
+      <div className='h-36 bg-red-800'></div>
       <Footer />
     </div>
   );

@@ -9,7 +9,7 @@ const signOut = (saveUser) => {
 
 function Header() {
   return (
-    <header className="border-2 w-full absolute">
+    <header className="border-2 w-full absolute z-40">
       <div className="flex justify-between px-12">
         <Link to="/">
           <img className="circle w-52 h-52" src={logo} alt="img" />
