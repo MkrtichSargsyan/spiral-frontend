@@ -1,12 +1,16 @@
 import React from 'react';
 import Footer from '../components/Footer';
+import Header from '../components/Header';
+import Showcase from '../components/Showcase';
 
 function MainPage() {
-  return <div className='bg-red-900'>
-    <div className='h-80'></div>
-    <div className='h-80'></div>
-    <Footer/>
-  </div>;
+  return (
+    <div className="">
+      <Header />
+      <Showcase />
+      <Footer />
+    </div>
+  );
 }
 
 export default MainPage;
