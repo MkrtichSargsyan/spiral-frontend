@@ -14,7 +14,11 @@ function AboutUs() {
         to our clients. We stand behind our partnerships and we stake our
         reputation on the relationships we build.
       </p>
-      <Link to="/about">ABOUT US</Link>
+      <Link to="/about">
+        <div className="animButton">
+          <span>ABOUT US</span>
+        </div>
+      </Link>
     </section>
   );
 }
