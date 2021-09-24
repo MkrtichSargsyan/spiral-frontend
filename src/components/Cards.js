@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import homeIcon from '../images/homeIcon.jpeg';
 import agentIcon from '../images/agentIcon.jpeg';
-import AnimButton from '../ui_kits/AnimButton';
 import Card from './Card';
 
 function Cards() {
   return (
-    <div className="w-3/5 flex absolute -bottom-52">
+    <div className="w-3/5 flex absolute -bottom-56">
       <Card
         icon={homeIcon}
         iconName="homeIcon"

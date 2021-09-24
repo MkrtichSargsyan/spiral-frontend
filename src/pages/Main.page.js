@@ -3,14 +3,16 @@ import AboutUs from '../components/AboutUs';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 import Showcase from '../components/Showcase';
+import WhatWeDo from '../components/WhatWeDo';
 
 function MainPage() {
   return (
     <div className="relative">
       <Header />
       <Showcase />
-      <AboutUs/>
-      <div className='h-36 bg-red-800'></div>
+      <AboutUs />
+      <WhatWeDo />
+      <div className="h-36 bg-red-800"></div>
       <Footer />
     </div>
   );

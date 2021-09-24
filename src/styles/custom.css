@@ -30,3 +30,10 @@ hr {
 .showcaseCard:hover{
   z-index: 4000;
 }
+
+.services li::before{
+    content: "✔ ";
+    /* color: rgb(148, 82, 38); */
+    font-size: 4vmin;
+    text-indent: -2em;
+}

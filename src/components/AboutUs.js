@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import AnimButton from '../ui_kits/AnimButton';
 
 function AboutUs() {
