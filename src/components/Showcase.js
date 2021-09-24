@@ -26,14 +26,14 @@ function Showcase() {
     <section
       className="showcase relative bg-no-repeat bg-cover flex justify-center flex-col items-center"
       style={{
-        height: '140vh',
+        height: '150vh',
         width: '100%',
         transition: 'all 2s ease-in-out',
         backgroundSize: 'cover',
         backgroundImage: `url(${bgImages[currentBg]})`,
       }}
     >
-      <div className="text-center z-40 -mt-10 w-full">
+      <div className="text-center z-40 -mt-40 w-full">
         <h1 className="text-5xl text-white mb-3 font-caramel">
           Find your dream home in
         </h1>

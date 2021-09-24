@@ -12,7 +12,7 @@ function Card({
   colorHover,
 }) {
   return (
-    <article className="flex flex-col flex-1 border-2 items-center text-center">
+    <article className="showcaseCard flex flex-col flex-1 bg-gray-100 items-center text-center transform duration-1000 hover:scale-110 shadow-xl z-50 rounded-sm">
       <div className="w-20 h-20 my-10">
         <img
           src={icon}

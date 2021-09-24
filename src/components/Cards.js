@@ -7,7 +7,7 @@ import Card from './Card';
 
 function Cards() {
   return (
-    <div className="z-50 w-3/5 bg-gray-100 flex absolute -bottom-52">
+    <div className="w-3/5 flex absolute -bottom-52">
       <Card
         icon={homeIcon}
         iconName="homeIcon"
