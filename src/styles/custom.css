@@ -11,6 +11,29 @@ body {
   margin: 0 auto;
 }
 
-.showcase{
-  
+p {
+  font-family: 'Mulish', sans-serif;
+}
+
+.font-caramel {
+  font-family: 'Caramel', cursive;
+}
+
+.font-mulish {
+  font-family: 'Mulish', sans-serif;
+}
+
+/* h2:after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 52px;
+  height: 2px;
+  background-color: #515253;
+} */
+
+hr{
+  border-bottom: 2px solid rgb(0, 0, 0);
 }
