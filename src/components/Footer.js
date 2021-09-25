@@ -19,14 +19,16 @@ function Footer() {
       </div>
       <div className="z-30 bottom-0 absolute w-full flex flex-col px-4 py-6">
         <div className="flex items-center my-12">
-          <div className="flex-1 text-white text-center text-2xl">(919) 382-2001</div>
+          <div className="flex-1 text-white text-center text-2xl">
+            (919) 382-2001
+          </div>
           <div className="flex-1 flex justify-center">
             <Link to="/">
               <img className="circle w-40 h-40" src={logo} alt="img" />
             </Link>
           </div>
           <div className="flex-1">
-            <ul className='flex justify-between w-3/4 m-auto'>
+            <ul className="flex justify-between w-3/4 m-auto">
               <li>
                 <img className="w-8 h-8" src={f} alt="facebook" />
               </li>
@@ -46,7 +48,6 @@ function Footer() {
           </div>
         </div>
 
-        {/* second */}
         <div className="flex justify-around items-center">
           <div className="flex-1">
             <div className="w-2/5 flex justify-between m-auto">

@@ -3,7 +3,7 @@ import AnimButton from '../ui_kits/AnimButton';
 
 function AboutUs() {
   return (
-    <section className="bg-gray-300 flex items-center flex-col py-20 pt-56">
+    <section className="bg-gray-300 flex items-center flex-col py-10 pt-56">
       <h2 className="text-4xl text-gray-400 mt-16 mb-2 relative">About Us</h2>
       <hr className="w-10 mb-10" />
       <p className="w-2/5 text-xl text-center">
