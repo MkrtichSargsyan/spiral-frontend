@@ -10,13 +10,11 @@ import WhatWeDo from '../components/WhatWeDo';
 function MainPage() {
   return (
     <div className="relative">
-      <Header />
       <Showcase />
       <AboutUs />
       <WhatWeDo />
       <Testimonials />
       <SearchBar />
-      <Footer />
     </div>
   );
 }

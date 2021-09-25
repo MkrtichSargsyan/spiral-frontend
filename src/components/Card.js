@@ -25,7 +25,7 @@ function Card({
       <div
         className={`${color} hover:${colorHover} transition duration-500 ease-in-out cursor-pointer w-full p-5`}
       >
-        <Link to={link}>{buttonText}</Link>
+        <Link to={link} className='text-white'>{buttonText}</Link>
       </div>
     </article>
   );
