@@ -2,10 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo_transparent.png';
 
-const signOut = (saveUser) => {
-  localStorage.removeItem('token');
-  saveUser(null);
-};
+// const signOut = (saveUser) => {
+//   localStorage.removeItem('token');
+//   saveUser(null);
+// };
 
 function Header() {
   return (

@@ -1,0 +1,8 @@
+export const FETCH_AGENTS_START = 'FETCH_AGENTS_START';
+export const FETCH_AGENTS_SUCCESS = 'FETCH_AGENTS_SUCCESS';
+export const FETCH_AGENTS_ERROR = 'FETCH_AGENTS_ERROR';
+export const CHOOSE_AGENT = 'CHOOSE_AGENT';
+// export const OPEN_MODAL = 'OPEN_MODAL';
+// export const CLOSE_MODAL = 'CLOSE_MODAL';
+// export const SAVE_USER = 'SAVE_USER';
+// export const SAVE_TOKEN = 'SAVE_TOKEN'

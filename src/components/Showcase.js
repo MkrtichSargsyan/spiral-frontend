@@ -10,22 +10,22 @@ function Showcase() {
   const bgImages = [re1, re2, re3, re4];
   let [currentBg, setCurrentBg] = useState(0);
 
-  // useEffect(() => {
-  //   console.log(currentBg);
+  useEffect(() => {
+    console.log(currentBg);
 
-  //   const interval = setInterval(() => {
-  //     if (currentBg === bgImages.length) {
-  //       setCurrentBg(0);
-  //     } else {
-  //       setCurrentBg(currentBg++);
-  //     }
-  //   }, 2000);
-  //   return () => clearInterval(interval);
-  // });
+    const interval = setInterval(() => {
+      if (currentBg === bgImages.length) {
+        setCurrentBg(0);
+      } else {
+        setCurrentBg(currentBg++);
+      }
+    }, 2000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <section
-      className="showcase relative bg-no-repeat bg-cover flex justify-center flex-col items-center"
+      className="showcase bg-no-repeat bg-cover flex justify-center flex-col items-center"
       style={{
         height: '150vh',
         width: '100%',
@@ -44,7 +44,7 @@ function Showcase() {
         </div>
       </div>
 
-      <div className="w-full h-full bg-black absolute z-10 opacity-90"></div>
+      <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
 
       <Cards />
     </section>

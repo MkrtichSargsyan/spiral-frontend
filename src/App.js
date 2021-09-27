@@ -1,6 +1,8 @@
 import { Route, Switch } from 'react-router';
 import MainLayout from './layouts/MainLayout';
 import AboutUsPage from './pages/AboutUs.page';
+import AgentPage from './pages/Agent.page';
+import AgentsPage from './pages/Agents.page';
 import MainPage from './pages/Main.page';
 
 function App() {
@@ -9,6 +11,8 @@ function App() {
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/about" component={AboutUsPage} />
+        <Route exact path="/agents" component={AgentsPage} />
+        <Route exact path="/agents/:id" component={AgentPage} />
       </Switch>
     </MainLayout>
   );

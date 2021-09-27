@@ -25,7 +25,7 @@ function Cards() {
         description="Our large team of agents is among the most experienced and 
                       knowledgeable in the area and are ready to put our expertise to work for you."
         buttonText="MEET THE TEAM"
-        link="/"
+        link="/agents"
         color="bg-blue-700"
         colorHover="bg-blue-500"
       />
