@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import AgentHouses from '../components/AgentHouses';
 import re4 from '../images/realEstate/re4.jpg';
 import { chooseAgent, fetchAgentHouses } from '../store/actions';
-//
+
 function AgentPage(props) {
   const dispatch = useDispatch();
   const { id, name, title, photo, number } = props.location.state;
@@ -46,8 +46,8 @@ function AgentPage(props) {
         </div>
         <div className="w-full h-full bg-black absolute z-10 opacity-70"></div>
       </section>
-      <section className="bg-gray-300 p-16">
-        <h3 className="text-4xl w-max text-gray-900 pb-2 border-b-2 border-blue-900">
+      <section className="bg-gray-300 p-14">
+        <h3 className="text-4xl w-max text-gray-900 pb-2 border-b-2 border-blue-900 mb-20">
           {name}'s Listings
         </h3>
         <AgentHouses />
