@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import re3 from '../images/realEstate/re3.jpg';
 
 function AboutUsPage() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
       <section

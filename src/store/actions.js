@@ -37,9 +37,30 @@ const fetchAgentsError = (e) => {
 
 // choose agent
 
-export const chooseAgent = (choosedAgent) =>{
+export const chooseAgent = (choosedAgent) => {
   return {
     type: types.CHOOSE_AGENT,
-    choosedAgent
-  }
-}
+    choosedAgent,
+  };
+};
+
+// fetch agent houses
+
+export const fetchAgentHouses = (url) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(url);
+      dispatch(fetchAgentHousesSuccess(response.data));
+    } catch (e) {
+      console.log('show error');
+    }
+  };
+};
+
+const fetchAgentHousesSuccess = (agentHousesList) => {
+  console.log('xxxx',agentHousesList);
+  return {
+    type: types.FETCH_AGENTS_HOUSES_SUCCESS,
+    agentHousesList,
+  };
+};

@@ -5,6 +5,7 @@ const initialState = {
   loading: false,
   error: null,
   choosedAgent: null,
+  agentHouses: [],
 };
 
 export const agentsReducer = (state = initialState, action) => {
@@ -30,6 +31,11 @@ export const agentsReducer = (state = initialState, action) => {
       return {
         ...state,
         choosedAgent: action.choosedAgent,
+      };
+    case types.FETCH_AGENTS_HOUSES_SUCCESS:
+      return {
+        ...state,
+        agentHouses: action.agentHousesList,
       };
     default:
       return state;

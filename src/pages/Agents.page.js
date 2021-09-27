@@ -35,8 +35,7 @@ function AgentsPage() {
         <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
       </section>
       <section className="p-20 bg-gray-300">
-        {loading ? <Loader /> : null}
-        {agents.length ? <AgentsList allAgents={agents} /> : null}
+        {loading ? <Loader /> : <AgentsList allAgents={agents} />}
       </section>
     </>
   );
