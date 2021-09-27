@@ -10,6 +10,7 @@ function AgentsPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     dispatch(fetchAgents('http://localhost:3000/agents'));
   }, [dispatch]);
 
@@ -32,7 +33,7 @@ function AgentsPage() {
         <div className="text-center z-40 w-full flex flex-col items-center">
           <h1 className="text-6xl text-white mb-3 font-caramel">Our Agents</h1>
         </div>
-        <div className="w-full h-full bg-black absolute z-10 opacity-90"></div>
+        <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
       </section>
       <section className="p-20 bg-gray-300">
         {loading ? <Loader /> : null}
