@@ -37,3 +37,7 @@ hr {
     font-size: 4vmin;
     text-indent: -2em;
 }
+
+.bright{
+  filter: brightness(200%);
+}

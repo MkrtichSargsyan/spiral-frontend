@@ -11,8 +11,6 @@ function Showcase() {
   let [currentBg, setCurrentBg] = useState(0);
 
   useEffect(() => {
-    console.log(currentBg);
-
     const interval = setInterval(() => {
       if (currentBg === bgImages.length) {
         setCurrentBg(0);

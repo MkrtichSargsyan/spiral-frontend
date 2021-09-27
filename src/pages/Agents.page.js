@@ -16,7 +16,6 @@ function AgentsPage() {
 
   const agents = useSelector((state) => state.agentsReducer.agents);
   const loading = useSelector((state) => state.agentsReducer.loading);
-  console.log(loading);
 
   return (
     <>
