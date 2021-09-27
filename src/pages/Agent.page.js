@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
+import AgentHouses from '../components/AgentHouses';
 import re4 from '../images/realEstate/re4.jpg';
 import { chooseAgent, fetchAgentHouses } from '../store/actions';
 //
@@ -11,9 +12,8 @@ function AgentPage(props) {
     dispatch(chooseAgent(props.location.state));
     dispatch(fetchAgentHouses(`http://localhost:3000/agents/${id}/houses`));
     window.scrollTo(0, 0);
-  }, [dispatch, props.location.state]);
+  }, [dispatch, id, props.location.state]);
 
-  console.log(name);
   return (
     <>
       <section
@@ -47,9 +47,10 @@ function AgentPage(props) {
         <div className="w-full h-full bg-black absolute z-10 opacity-70"></div>
       </section>
       <section className="bg-gray-300 p-16">
-        <h3 className="text-4xl capitalize w-max text-gray-900 pb-2 border-b-2 border-blue-900">
+        <h3 className="text-4xl w-max text-gray-900 pb-2 border-b-2 border-blue-900">
           {name}'s Listings
         </h3>
+        <AgentHouses />
       </section>
     </>
   );

@@ -58,7 +58,6 @@ export const fetchAgentHouses = (url) => {
 };
 
 const fetchAgentHousesSuccess = (agentHousesList) => {
-  console.log('xxxx',agentHousesList);
   return {
     type: types.FETCH_AGENTS_HOUSES_SUCCESS,
     agentHousesList,
