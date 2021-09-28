@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import houseIcon from '../images/house_icon.png';
+
+import VanillaTilt from 'vanilla-tilt';
 
 function AgentHouses() {
   const agentHousesList = useSelector(
@@ -8,10 +10,25 @@ function AgentHouses() {
   );
   console.log(agentHousesList);
 
+  const tilt = useRef(null);
+
+  useEffect(() => {
+    VanillaTilt.init(tilt.current, {
+      scale: 1.2,
+      speed: 1000,
+      max: 30,
+    });
+  }, []);
+
   return (
     <div className="border-1 border-black flex w-full flex-wrap">
       {agentHousesList.map((house) => (
-        <article className="house_card w-1/3 p-1 mb-10" key={house.id}>
+        <article
+          ref={tilt}
+          className="w-1/3 p-3 mb-10"
+          key={house.id}
+          data-tilt
+        >
           <div className=" rounded flex flex-col items-center">
             <img
               className="rounded shadow-2xl"
@@ -32,9 +49,7 @@ function AgentHouses() {
                 <p className="font-bold">{house.price}</p>
               </div>
               <p className="w-2/3">{house.address}</p>
-              <div className='bg-gray-900 w-full h-10'>
-
-              </div>
+              <div className="bg-gray-900 w-full h-10"></div>
             </div>
           </div>
         </article>
