@@ -11,7 +11,7 @@ function AgentHouses() {
   return (
     <div className="border-1 border-black flex w-full flex-wrap">
       {agentHousesList.map((house) => (
-        <article className="w-1/3 p-1 mb-10" key={house.id}>
+        <article className="house_card w-1/3 p-1 mb-10" key={house.id}>
           <div className=" rounded flex flex-col items-center">
             <img
               className="rounded shadow-2xl"

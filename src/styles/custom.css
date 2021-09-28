@@ -41,3 +41,13 @@ hr {
 .bright{
   filter: brightness(200%);
 }
+
+/* .house_card{
+  transition: transform 0.1s ease;
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+.house_card:hover{
+  transform: translateZ(12px);
+} */
