@@ -1,3 +1,4 @@
+import HousesList from '../components/house_components/HousesList';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
@@ -12,10 +13,8 @@ function HousesPage() {
     dispatch(fetchHouses('http://localhost:3000/houses'));
   }, [dispatch]);
 
-  const houses = useSelector((state) => state.housesReducer.agents);
+  const houses = useSelector((state) => state.housesReducer.houses);
   const loading = useSelector((state) => state.housesReducer.loading);
-
-  console.log(houses);
 
   return (
     <>
@@ -38,7 +37,7 @@ function HousesPage() {
       </section>
 
       <section className="p-20 bg-gray-300">
-        {/* {loading ? <Loader /> : <AgentsList allAgents={agents} />} */}
+        {loading ? <Loader /> : <HousesList allHouses={houses} />}
       </section>
     </>
   );

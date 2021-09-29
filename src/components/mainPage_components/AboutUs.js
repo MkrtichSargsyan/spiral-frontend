@@ -1,5 +1,5 @@
 import React from 'react';
-import AnimButton from '../ui_kits/AnimButton';
+import AnimButton from '../../ui_kits/AnimButton';
 
 function AboutUs() {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import homeIcon from '../images/homeIcon.jpeg';
-import agentIcon from '../images/agentIcon.jpeg';
+import homeIcon from '../../images/homeIcon.jpeg';
+import agentIcon from '../../images/agentIcon.jpeg';
 import Card from './Card';
 
 function Cards() {

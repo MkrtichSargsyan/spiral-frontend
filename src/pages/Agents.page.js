@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import AgentsList from '../components/AgentsList';
+import AgentsList from '../components/agent_components/AgentsList';
 import Loader from '../components/Loader';
 import re2 from '../images/realEstate/re2.jpeg';
 import { fetchAgents } from '../store/actions';

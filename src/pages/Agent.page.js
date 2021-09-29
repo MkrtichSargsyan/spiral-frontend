@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import AgentHouses from '../components/AgentHouses';
+import AgentHouses from '../components/agent_components/AgentHouses';
 import re4 from '../images/realEstate/re4.jpg';
 import { chooseAgent, fetchAgentHouses } from '../store/actions';
 

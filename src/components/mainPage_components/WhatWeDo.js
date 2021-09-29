@@ -1,5 +1,5 @@
 import React from 'react';
-import whatWeDoBg from '../images/whatWeDo.jpeg';
+import whatWeDoBg from '../../images/whatWeDo.jpeg';
 
 function WhatWeDo() {
   return (

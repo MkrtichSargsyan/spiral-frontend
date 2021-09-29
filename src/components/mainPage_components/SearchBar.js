@@ -1,5 +1,5 @@
 import React from 'react';
-import MyInput from '../ui_kits/MyInput';
+import MyInput from '../../ui_kits/MyInput';
 
 function SearchBar() {
   return (
