@@ -14,7 +14,7 @@ function Cards() {
                     life you’re in, we help to find you the perfect home for building
                     lasting memories."
         buttonText="VIEW PROPERTIES"
-        link="/"
+        link="/houses"
         color="bg-green-700"
         colorHover="bg-green-500"
       />

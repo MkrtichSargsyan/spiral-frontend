@@ -63,3 +63,38 @@ const fetchAgentHousesSuccess = (agentHousesList) => {
     agentHousesList,
   };
 };
+
+// fetch houses
+
+export const fetchHouses = (url) => {
+  return async (dispatch) => {
+    dispatch(fetchHousesStart());
+
+    try {
+      const response = await axios.get(url);
+      dispatch(fetchHousesSuccess(response.data));
+    } catch (e) {
+      dispatch(fetchHousesError(e));
+    }
+  };
+};
+
+const fetchHousesStart = () => {
+  return {
+    type: types.FETCH_HOUSES_START,
+  };
+};
+
+const fetchHousesSuccess = (housesList) => {
+  return {
+    type: types.FETCH_HOUSES_SUCCESS,
+    housesList,
+  };
+};
+
+const fetchHousesError = (e) => {
+  return {
+    type: types.FETCH_HOUSES_ERROR,
+    error: e,
+  };
+};

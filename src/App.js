@@ -3,6 +3,7 @@ import MainLayout from './layouts/MainLayout';
 import AboutUsPage from './pages/AboutUs.page';
 import AgentPage from './pages/Agent.page';
 import AgentsPage from './pages/Agents.page';
+import HousesPage from './pages/Houses.page';
 import MainPage from './pages/Main.page';
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/about" component={AboutUsPage} />
         <Route exact path="/agents" component={AgentsPage} />
         <Route exact path="/agents/:id" component={AgentPage} />
+        <Route exact path="/houses" component={HousesPage} />
       </Switch>
     </MainLayout>
   );
