@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import HousePreview from './HousePreview';
 
 function HousesList({ allHouses }) {
@@ -9,6 +8,7 @@ function HousesList({ allHouses }) {
         allHouses.map((house) => (
           <HousePreview
             key={house.id}
+            id={house.id}
             pictures={house.pictures}
             price={house.price}
             address={house.address}

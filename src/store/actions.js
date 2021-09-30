@@ -98,3 +98,32 @@ const fetchHousesError = (e) => {
     error: e,
   };
 };
+
+//  choose house id
+
+export const chooseHouse = (choosedHouseId) => {
+  return {
+    type: types.CHOOSE_HOUSE,
+    choosedHouseId,
+  };
+};
+
+// fetch house by id
+
+export const fetchHouseById = (url) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(url);
+      dispatch(fetchHouseByIdSuccess(response.data));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
+
+const fetchHouseByIdSuccess = (choosedHouse) => {
+  return {
+    type: types.FETCH_HOUSE_BY_ID,
+    choosedHouse,
+  };
+};

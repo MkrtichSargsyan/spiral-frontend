@@ -4,7 +4,8 @@ const initialState = {
   houses: [],
   loading: false,
   error: null,
-  choosedHouse: null,
+  choosedHouseId: null,
+  choosedHouse:null
   // agentHouses: [],
 };
 
@@ -28,6 +29,12 @@ export const housesReducer = (state = initialState, action) => {
         error: action.error,
       };
     case types.CHOOSE_HOUSE:
+      return {
+        ...state,
+        choosedHouseId: action.choosedHouseId,
+      };
+    // fetch house by id
+    case types.FETCH_HOUSE_BY_ID:
       return {
         ...state,
         choosedHouse: action.choosedHouse,

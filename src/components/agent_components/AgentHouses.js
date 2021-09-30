@@ -13,6 +13,7 @@ function AgentHouses() {
       {agentHousesList.map((house) => (
         <HousePreview
           key={house.id}
+          id={house.id}
           pictures={house.pictures}
           price={house.price}
           address={house.address}
