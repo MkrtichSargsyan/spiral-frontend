@@ -64,7 +64,27 @@ const fetchAgentHousesSuccess = (agentHousesList) => {
   };
 };
 
-// fetch houses
+
+export const fetchAgentById = (url) => {
+  return async (dispatch) => {
+    try {
+      const response = await axios.get(url);
+      dispatch(fetchAgentByIdSuccess(response.data));
+    } catch (e) {
+      console.log(e);
+    }
+  };
+};
+
+const fetchAgentByIdSuccess = (choosedAgent) => {
+  return {
+    type: types.FETCH_AGENT_BY_ID,
+    choosedAgent,
+  };
+};
+
+
+// ------------------- fetch houses
 
 export const fetchHouses = (url) => {
   return async (dispatch) => {

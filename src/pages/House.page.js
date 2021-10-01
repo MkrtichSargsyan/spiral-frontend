@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import re4 from '../images/realEstate/re4.jpg';
-import { fetchHouseById } from '../store/actions';
+import { fetchAgentById, fetchHouseById } from '../store/actions';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
@@ -21,11 +21,18 @@ function HousePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+
     dispatch(fetchHouseById(`http://localhost:3000/houses/${houseId}`));
   }, [dispatch, houseId]);
 
   const house = useSelector((state) => state.housesReducer.choosedHouse);
-  console.log(house);
+  useEffect(() => {
+    if (house) {
+      dispatch(
+        fetchAgentById(`http://localhost:3000/agents/${house.agent_id}`)
+      );
+    }
+  });
 
   return (
     <>
@@ -64,7 +71,7 @@ function HousePage() {
               ))}
             </Carousel>
           </section>
-          <section className="py-10 bg-gray-300 flex justify-center">
+          <section className="py-10 bg-gray-300 flex flex-col items-center">
             <div className="w-2/3 flex bg-white">
               <article className="w-3/4 pl-6 pt-10 flex flex-col justify-center border-r-2 pr-4">
                 <div className="flex items-center w-10 h-10 mb-4">
@@ -80,12 +87,12 @@ function HousePage() {
                 <p>{house.description}</p>
 
                 <h3 className="text-gray-500 mt-8">FEATURES</h3>
-                <ol
-                  type="i"
-                  className="flex flex-wrap justify-around my-4"
-                >
-                  {house.features.map((feature) => (
-                    <li className="w-1/2 list-item list-disc list-inside mb-2 text-lg text-gray-500">
+                <ol type="i" className="flex flex-wrap justify-around my-4">
+                  {house.features.map((feature, i) => (
+                    <li
+                      key={i}
+                      className="w-1/2 list-item list-disc list-inside mb-2 text-lg text-gray-500"
+                    >
                       {feature}
                     </li>
                   ))}
@@ -122,6 +129,9 @@ function HousePage() {
                   <span>{house.acres} acres</span>
                 </div>
               </aside>
+            </div>
+            <div className="w-2/3 bg-black opacity-90">
+              <img src="" alt="agent_photo" />
             </div>
           </section>
         </>
