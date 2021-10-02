@@ -38,7 +38,6 @@ export const agentsReducer = (state = initialState, action) => {
         agentHouses: action.agentHousesList,
       };
     case types.FETCH_AGENT_BY_ID:
-      console.log(action.choosedAgent);
       return {
         ...state,
         choosedAgent: action.choosedAgent,

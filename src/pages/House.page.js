@@ -13,6 +13,7 @@ import bathroomIcon from '../images/houseIcons/bathroom.png';
 import acresIcon from '../images/houseIcons/acres.png';
 import sqftIcon from '../images/houseIcons/sqft.png';
 import houseIcon from '../images/house_icon.png';
+import AnimButton from '../ui_kits/AnimButton';
 
 function HousePage() {
   const dispatch = useDispatch();
@@ -21,18 +22,23 @@ function HousePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-
+console.log('first');
     dispatch(fetchHouseById(`http://localhost:3000/houses/${houseId}`));
   }, [dispatch, houseId]);
 
   const house = useSelector((state) => state.housesReducer.choosedHouse);
+
   useEffect(() => {
-    if (house) {
+    console.log('second');
+    if (house?.agent_id) {
       dispatch(
         fetchAgentById(`http://localhost:3000/agents/${house.agent_id}`)
       );
     }
-  });
+  }, [dispatch, house?.agent_id]);
+
+  const agent = useSelector((state) => state.agentsReducer.choosedAgent);
+  console.log(agent);
 
   return (
     <>
@@ -48,9 +54,9 @@ function HousePage() {
       >
         {house && (
           <div className="text-center z-40 w-full flex flex-col items-center">
-            <h1 className="text-6xl text-white w-2/5 mb-3 font-caramel mt-10">
+            <address className="text-6xl text-white w-2/5 mb-3 font-caramel mt-10">
               {house && house.address}
-            </h1>
+            </address>
           </div>
         )}
         <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
@@ -130,11 +136,36 @@ function HousePage() {
                 </div>
               </aside>
             </div>
-            <div className="w-2/3 bg-black opacity-90">
-              <img src="" alt="agent_photo" />
-            </div>
           </section>
         </>
+      ) : (
+        <Loader />
+      )}
+      {/* agent section */}
+
+      {agent ? (
+        <section className="bg-gray-300 flex pb-8">
+          <iframe
+            title="myFrame"
+            className="flex-1"
+            height="600"
+            src="https://maps.google.com/maps?q=40.1872, 44.5152&z=15&output=embed"
+            frameborder="0"
+          ></iframe>
+          <div className="w-1/3 bg-black opacity-90 flex flex-col items-center text-white justify-center">
+            <div className="w-40 h-40 mb-4">
+              <img
+                src={agent.photo}
+                alt="agent_photo"
+                className="w-full h-full rounded-full"
+              />
+            </div>
+            <h2 className="mb-2">{agent.name}</h2>
+            <p className="mb-2">{agent.title}</p>
+            <p className="border-2 p-2 px-10 mb-2">{agent.number}</p>
+            <AnimButton link={'/'} text="Make an Appointment" />
+          </div>
+        </section>
       ) : (
         <Loader />
       )}

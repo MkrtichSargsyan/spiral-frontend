@@ -27,7 +27,7 @@ function AgentPage(props) {
         }}
       >
         <div>
-          <div className="text-center z-40 mt-40 flex justify-center w-max bright">
+          <div className="text-center z-40 mt-40 flex justify-center w-max">
             <img
               src={photo}
               alt="agent_photo"
