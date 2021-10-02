@@ -22,14 +22,12 @@ function HousePage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-console.log('first');
     dispatch(fetchHouseById(`http://localhost:3000/houses/${houseId}`));
   }, [dispatch, houseId]);
 
   const house = useSelector((state) => state.housesReducer.choosedHouse);
 
   useEffect(() => {
-    console.log('second');
     if (house?.agent_id) {
       dispatch(
         fetchAgentById(`http://localhost:3000/agents/${house.agent_id}`)
@@ -38,7 +36,7 @@ console.log('first');
   }, [dispatch, house?.agent_id]);
 
   const agent = useSelector((state) => state.agentsReducer.choosedAgent);
-  console.log(agent);
+  console.log(house);
 
   return (
     <>
@@ -145,12 +143,17 @@ console.log('first');
 
       {agent ? (
         <section className="bg-gray-300 flex pb-8">
+          {/* <iframe
+            title="myFrame"
+            className="flex-1"
+            height="600"
+            src={`https://maps.google.com/maps?q=${house.lat},${house.long}&t=k&z=9&ie=UTF8&iwloc=&output=embed`}
+          ></iframe> */}
           <iframe
             title="myFrame"
             className="flex-1"
             height="600"
-            src="https://maps.google.com/maps?q=40.1872, 44.5152&z=15&output=embed"
-            frameborder="0"
+            src={`https://maps.google.com/maps?q=${house.lat},${house.long}&t=k&z=13&ie=UTF8&iwloc=&output=embed`}
           ></iframe>
           <div className="w-1/3 bg-black opacity-90 flex flex-col items-center text-white justify-center">
             <div className="w-40 h-40 mb-4">
