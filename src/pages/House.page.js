@@ -26,7 +26,6 @@ function HousePage() {
   }, [dispatch, houseId]);
 
   const house = useSelector((state) => state.housesReducer.choosedHouse);
-
   useEffect(() => {
     if (house?.agent_id) {
       dispatch(
@@ -143,17 +142,11 @@ function HousePage() {
 
       {agent ? (
         <section className="bg-gray-300 flex pb-8">
-          {/* <iframe
-            title="myFrame"
-            className="flex-1"
-            height="600"
-            src={`https://maps.google.com/maps?q=${house.lat},${house.long}&t=k&z=9&ie=UTF8&iwloc=&output=embed`}
-          ></iframe> */}
           <iframe
             title="myFrame"
             className="flex-1"
             height="600"
-            src={`https://maps.google.com/maps?q=${house.lat},${house.long}&t=k&z=13&ie=UTF8&iwloc=&output=embed`}
+            src={`https://maps.google.com/maps?q=${house.lat},${house.long}&t=k&z=11&ie=UTF8&iwloc=&output=embed`}
           ></iframe>
           <div className="w-1/3 bg-black opacity-90 flex flex-col items-center text-white justify-center">
             <div className="w-40 h-40 mb-4">
@@ -166,7 +159,7 @@ function HousePage() {
             <h2 className="mb-2">{agent.name}</h2>
             <p className="mb-2">{agent.title}</p>
             <p className="border-2 p-2 px-10 mb-2">{agent.number}</p>
-            <AnimButton link={'/'} text="Make an Appointment" />
+            <AnimButton link={'/'} text="Contact agent" />
           </div>
         </section>
       ) : (

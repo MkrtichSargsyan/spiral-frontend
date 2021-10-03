@@ -11,7 +11,8 @@ export const FETCH_HOUSES_SUCCESS = 'FETCH_HOUSES_SUCCESS';
 export const FETCH_HOUSES_ERROR = 'FETCH_HOUSES_ERROR';
 export const CHOOSE_HOUSE = 'CHOOSE_HOUSE';
 export const FETCH_HOUSE_BY_ID = 'FETCH_HOUSE_BY_ID';
-// export const OPEN_MODAL = 'OPEN_MODAL';
-// export const CLOSE_MODAL = 'CLOSE_MODAL';
-// export const SAVE_USER = 'SAVE_USER';
-// export const SAVE_TOKEN = 'SAVE_TOKEN'
+// auth types
+export const OPEN_MODAL = 'OPEN_MODAL';
+export const CLOSE_MODAL = 'CLOSE_MODAL';
+export const SAVE_USER = 'SAVE_USER';
+export const SAVE_TOKEN = 'SAVE_TOKEN';

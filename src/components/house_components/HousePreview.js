@@ -39,7 +39,7 @@ function HousePreview({ id, pictures, price, address, bedrooms, bathrooms }) {
                     alt="house_icon"
                     className="w-10 h-10 mr-3"
                   />
-                  <p className="font-bold">{price}</p>
+                  <p className="font-bold">$ {price}</p>
                 </div>
                 <p className="w-2/3">{address}</p>
               </div>

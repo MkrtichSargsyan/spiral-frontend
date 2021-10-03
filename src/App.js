@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Route, Switch } from 'react-router';
 import MainLayout from './layouts/MainLayout';
 import AboutUsPage from './pages/AboutUs.page';
@@ -7,7 +8,21 @@ import HousePage from './pages/House.page';
 import HousesPage from './pages/Houses.page';
 import MainPage from './pages/Main.page';
 
+import jwtDecode from 'jwt-decode';
+import { saveUser } from './store/actions';
+
 function App() {
+
+  useEffect(() => {
+      const token = localStorage.getItem('token');
+      console.log('token',token);
+      if (token && token !== 'undefined') {
+        // let jwt = window.localStorage.getItem('token');
+        let result = jwtDecode(token);
+        saveUser(result);
+      }
+  }, [])
+
   return (
     <MainLayout>
       <Switch>

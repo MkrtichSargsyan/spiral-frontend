@@ -17,7 +17,7 @@ function Showcase() {
       } else {
         setCurrentBg(currentBg++);
       }
-    }, 1500);
+    }, 1000);
     return () => clearInterval(interval);
   });
 
@@ -27,7 +27,7 @@ function Showcase() {
       style={{
         height: '150vh',
         width: '100%',
-        transition: 'all 2s ease-in-out',
+        transition: 'all 1s ease-in-out',
         backgroundSize: 'cover',
         backgroundImage: `url(${bgImages[currentBg]})`,
       }}

@@ -147,3 +147,38 @@ const fetchHouseByIdSuccess = (choosedHouse) => {
     choosedHouse,
   };
 };
+
+
+// save user
+
+export const saveUser = (user) =>{
+  return {
+    type: types.SAVE_USER,
+    user
+  }
+}
+
+// save token
+
+export const saveToken = (token) =>{
+  return {
+    type: types.SAVE_TOKEN,
+    token
+  }
+}
+
+// modal actions
+
+export const openModal = (modalType) => {
+  console.log(modalType);
+  return {
+      type: types.OPEN_MODAL,
+      payload:modalType
+  }
+};
+
+export const closeModal = () => {
+  return {
+      type: types.CLOSE_MODAL,
+  }
+};
