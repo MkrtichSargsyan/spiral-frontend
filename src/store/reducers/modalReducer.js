@@ -8,10 +8,8 @@ const initialState = {
 };
 
 export const modalReducer = (state = initialState, action) => {
-  console.log(action);
   switch (action.type) {
     case types.OPEN_MODAL:
-      console.log('sdfsdf');
       return {
         ...state,
         [action.payload]:true

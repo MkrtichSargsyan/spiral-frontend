@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 
-import base_url from '../endpoints';
+import baseUrl from '../endpoints';
 import { Backdrop } from './Backdrop';
+import { closeModal } from '../store/actions';
 
 function Register() {
+  const dispatch = useDispatch();
+
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [password, setPassword] = useState(null);
-  const { closeModal } = this.props;
+  const [error, setError] = useState('');
 
   // handleChange(title, event) {
   //   this.setState({
@@ -64,9 +68,9 @@ function Register() {
       <Backdrop />
       <form
         className={'modal shadow-md'}
-        onSubmit={(e) => this.handleSubmit(e)}
+        // onSubmit={(e) => handleSubmit(e)}
       >
-        {this.state.error && <div className="text-red-600">Invalid data</div>}
+        {error && <div className="text-red-600">Invalid data</div>}
         <div className="pt-6 flex flex-col">
           <div className="mb-4">
             <label
@@ -76,7 +80,7 @@ function Register() {
               Username
             </label>
             <input
-              onChange={(e) => this.handleChange('username', e)}
+              onChange={(e) => setName(e.target.value)}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
               id="username"
               type="text"
@@ -91,31 +95,13 @@ function Register() {
               Password
             </label>
             <input
-              onChange={(e) => this.handleChange('password', e)}
+              onChange={(e) => setPassword(e.target.value)}
               className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-gray-800 mb-3"
               id="password"
               type="password"
               placeholder="********"
             />
             <p className="text-red text-xs italic">Please choose a password.</p>
-          </div>
-          <div className="mb-6">
-            <label
-              className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="confirmPassword"
-            >
-              Confirm Password
-            </label>
-            <input
-              onChange={(e) => this.handleChange('confirmPassword', e)}
-              className="shadow appearance-none border border-red rounded w-full py-2 px-3 text-gray-800 mb-3"
-              id="confirmPassword"
-              type="password"
-              placeholder="*******"
-            />
-            <p className="text-red text-xs italic">
-              Please confirm your password.
-            </p>
           </div>
           <div className="flex items-center justify-start flex-wrap">
             <button
@@ -125,7 +111,7 @@ function Register() {
               Create Account
             </button>
             <button
-              onClick={closeModal}
+              onClick={() => dispatch(closeModal())}
               className="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded w-max"
               type="button"
             >

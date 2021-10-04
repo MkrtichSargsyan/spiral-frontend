@@ -170,7 +170,6 @@ export const saveToken = (token) =>{
 // modal actions
 
 export const openModal = (modalType) => {
-  console.log(modalType);
   return {
       type: types.OPEN_MODAL,
       payload:modalType

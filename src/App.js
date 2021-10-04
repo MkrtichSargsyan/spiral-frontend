@@ -15,7 +15,7 @@ function App() {
 
   useEffect(() => {
       const token = localStorage.getItem('token');
-      console.log('token',token);
+      // console.log('token',token);
       if (token && token !== 'undefined') {
         // let jwt = window.localStorage.getItem('token');
         let result = jwtDecode(token);

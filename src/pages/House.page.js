@@ -26,17 +26,18 @@ function HousePage() {
   }, [dispatch, houseId]);
 
   const house = useSelector((state) => state.housesReducer.choosedHouse);
+
   useEffect(() => {
-    if (house?.agent_id) {
+      if (house) {
+      console.log(house?.agent_id);
       dispatch(
         fetchAgentById(`http://localhost:3000/agents/${house.agent_id}`)
       );
     }
-  }, [dispatch, house?.agent_id]);
+  }, [dispatch, house]);
 
   const agent = useSelector((state) => state.agentsReducer.choosedAgent);
-  console.log(house);
-
+console.log(agent);
   return (
     <>
       <section
@@ -140,7 +141,7 @@ function HousePage() {
       )}
       {/* agent section */}
 
-      {agent ? (
+      {agent && house ? (
         <section className="bg-gray-300 flex pb-8">
           <iframe
             title="myFrame"
@@ -163,7 +164,7 @@ function HousePage() {
           </div>
         </section>
       ) : (
-        <Loader />
+        <Loader />  
       )}
     </>
   );

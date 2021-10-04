@@ -20,7 +20,6 @@ function Header({ username }) {
     (state) => state.modalReducer.registerIsOpen
   );
 
-  console.log(loginIsOpen);
   return (
     <>
       {loginIsOpen && (
@@ -58,7 +57,7 @@ function Header({ username }) {
               // log in component
               <div className="flex-auto items-center justify-end flex">
                 <button
-                  // onClick={() => openModal('registerIsOpen')}
+                  onClick={() => dispatch(openModal('registerIsOpen'))}
                   className="mr-3 rounded bg-gray-100 hover:bg-gray-200 px-3 py-1 border transform duration-500 hover:scale-125"
                 >
                   Signup
