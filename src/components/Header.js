@@ -15,6 +15,9 @@ import Register from '../modals/Register';
 function Header({ username }) {
   const dispatch = useDispatch();
 
+  const user = useSelector((state) => state.authReducer.user);
+  // console.log('user', user);
+
   const loginIsOpen = useSelector((state) => state.modalReducer.loginIsOpen);
   const registerIsOpen = useSelector(
     (state) => state.modalReducer.registerIsOpen
@@ -22,20 +25,8 @@ function Header({ username }) {
 
   return (
     <>
-      {loginIsOpen && (
-        <Login
-        // closeModal={closeModal}
-        // saveToken={saveToken}
-        // saveUser={saveUser}
-        />
-      )}
-      {registerIsOpen && (
-        <Register
-        // closeModal={closeModal}
-        // saveToken={saveToken}
-        // saveUser={saveUser}
-        />
-      )}
+      {loginIsOpen && <Login />}
+      {registerIsOpen && <Register />}
       <header className="w-full absolute z-40">
         <div className="flex justify-between px-12">
           <Link to="/">

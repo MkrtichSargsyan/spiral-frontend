@@ -4,7 +4,7 @@ import jwtDecode from 'jwt-decode';
 import baseUrl from '../endpoints';
 
 import { Backdrop } from './Backdrop';
-import { closeModal } from '../store/actions';
+import { closeModal, saveToken, saveUser } from '../store/actions';
 import { useDispatch } from 'react-redux';
 
 function Login() {
@@ -17,10 +17,9 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const { saveToken, saveUser } = this.props;
 
     let data = {
-      username: name,
+      name: name,
       password: password,
     };
 
@@ -38,10 +37,10 @@ function Login() {
       const authData = authPromise.data;
       console.log(authData.token);
       window.localStorage.setItem('token', authData.token);
-      saveToken(authData.token);
+      dispatch(saveToken(authData.token));
 
       let result = jwtDecode(authData.token);
-      saveUser(result);
+      dispatch(saveUser(result));
 
       this.props.closeModal();
     } catch (error) {

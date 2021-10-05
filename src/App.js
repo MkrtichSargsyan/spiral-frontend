@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import { Route, Switch } from 'react-router';
 import MainLayout from './layouts/MainLayout';
 import AboutUsPage from './pages/AboutUs.page';
@@ -10,18 +11,31 @@ import MainPage from './pages/Main.page';
 
 import jwtDecode from 'jwt-decode';
 import { saveUser } from './store/actions';
+import axios from 'axios';
+
+import baseUrl from './endpoints';
 
 function App() {
+  const dispatch = useDispatch();
 
   useEffect(() => {
-      const token = localStorage.getItem('token');
-      // console.log('token',token);
-      if (token && token !== 'undefined') {
-        // let jwt = window.localStorage.getItem('token');
-        let result = jwtDecode(token);
-        saveUser(result);
-      }
-  }, [])
+    const token = localStorage.getItem('token');
+    if (token && token !== 'undefined') {
+      let config = {
+        method: 'get',
+        url: `${baseUrl}auto_login`,
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      };
+      console.log(config);
+
+      axios(config).then((res) => console.log('res', res.data));
+      let result = jwtDecode(token);
+      dispatch(saveUser(result));
+    }
+  }, [dispatch]);
 
   return (
     <MainLayout>
