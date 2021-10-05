@@ -37,12 +37,10 @@ function Register() {
       try {
         const authPromise = await axios(config);
         const authData = authPromise.data;
-        console.log('token', authData.token);
         window.localStorage.setItem('token', authData.token);
         dispatch(saveToken(authData.token));
 
         let result = jwtDecode(authData.token);
-        console.log('result', result);
         dispatch(saveUser(result));
 
         dispatch(closeModal());

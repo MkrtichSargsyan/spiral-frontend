@@ -5,7 +5,7 @@ import Header from '../components/Header';
 function MainLayout(props) {
   return (
     <>
-      <Header />
+      <Header/>
       {props.children}
       <Footer />
     </>

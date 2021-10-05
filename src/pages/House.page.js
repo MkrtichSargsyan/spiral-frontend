@@ -28,7 +28,7 @@ function HousePage() {
   const house = useSelector((state) => state.housesReducer.choosedHouse);
 
   useEffect(() => {
-      if (house) {
+    if (house) {
       console.log(house?.agent_id);
       dispatch(
         fetchAgentById(`http://localhost:3000/agents/${house.agent_id}`)
@@ -37,7 +37,7 @@ function HousePage() {
   }, [dispatch, house]);
 
   const agent = useSelector((state) => state.agentsReducer.choosedAgent);
-console.log(agent);
+  console.log(agent);
   return (
     <>
       <section
@@ -164,7 +164,7 @@ console.log(agent);
           </div>
         </section>
       ) : (
-        <Loader />  
+        <Loader />
       )}
     </>
   );

@@ -10,7 +10,7 @@ import { useDispatch } from 'react-redux';
 function Login() {
   const dispatch = useDispatch();
 
-  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
@@ -19,7 +19,7 @@ function Login() {
 
 
     let data = {
-      name: name,
+      email: email,
       password: password,
     };
 
@@ -42,7 +42,7 @@ function Login() {
       let result = jwtDecode(authData.token);
       dispatch(saveUser(result));
 
-      this.props.closeModal();
+      dispatch(closeModal());
     } catch (error) {
       setError(error);
     }
@@ -57,16 +57,16 @@ function Login() {
           <div className="mb-4">
             <label
               className="block text-grey-darker text-sm font-bold mb-2"
-              htmlFor="username"
+              htmlFor="email"
             >
-              Username
+              Email
             </label>
             <input
-              onChange={(e) => setName(e.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-800"
-              id="username"
-              type="text"
-              placeholder="Username"
+              id="email"
+              type="email"
+              placeholder="Email"
             />
           </div>
           <div className="mb-6">

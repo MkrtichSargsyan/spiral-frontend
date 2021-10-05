@@ -12,11 +12,11 @@ import Register from '../modals/Register';
 //   saveUser(null);
 // };
 
-function Header({ username }) {
+function Header() {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.authReducer.user);
-  // console.log('user', user);
+  console.log('user', user);
 
   const loginIsOpen = useSelector((state) => state.modalReducer.loginIsOpen);
   const registerIsOpen = useSelector(
@@ -33,10 +33,10 @@ function Header({ username }) {
             <img className="circle w-52 h-52" src={logo} alt="img" />
           </Link>
           <div className="items-center justify-end flex">
-            {username ? (
+            {user ? (
               // logout component
               <div className="flex-auto items-center justify-end flex">
-                {username}
+                {user.name}
                 <button
                   // onClick={() => signOut(saveUser)}
                   className="ml-6 cursor-pointer rounded bg-gray-100 hover:bg-gray-200 px-3 py-1 border transform duration-500 hover:scale-125"

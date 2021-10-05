@@ -14,6 +14,7 @@ import { saveUser } from './store/actions';
 import axios from 'axios';
 
 import baseUrl from './endpoints';
+import UserPage from './pages/User.page';
 
 function App() {
   const dispatch = useDispatch();
@@ -29,11 +30,8 @@ function App() {
           'Content-Type': 'application/json',
         },
       };
-      console.log(config);
 
-      axios(config).then((res) => console.log('res', res.data));
-      let result = jwtDecode(token);
-      dispatch(saveUser(result));
+      axios(config).then((res) => dispatch(saveUser(res.data)));
     }
   }, [dispatch]);
 
@@ -46,6 +44,7 @@ function App() {
         <Route exact path="/agents/:id" component={AgentPage} />
         <Route exact path="/houses" component={HousesPage} />
         <Route exact path="/houses/:id" component={HousePage} />
+        <Route exact path="/users/:userName" component={UserPage} />
       </Switch>
     </MainLayout>
   );
