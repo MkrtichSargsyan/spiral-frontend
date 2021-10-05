@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
-import jwtDecode from 'jwt-decode';
 
 import baseUrl from '../endpoints';
 import { Backdrop } from './Backdrop';

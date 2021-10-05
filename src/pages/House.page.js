@@ -5,6 +5,9 @@ import Loader from '../components/Loader';
 import re4 from '../images/realEstate/re4.jpg';
 import { fetchAgentById, fetchHouseById } from '../store/actions';
 
+import { openModal } from '../store/actions';
+import Apply from '../modals/Apply';
+
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 
@@ -13,12 +16,17 @@ import bathroomIcon from '../images/houseIcons/bathroom.png';
 import acresIcon from '../images/houseIcons/acres.png';
 import sqftIcon from '../images/houseIcons/sqft.png';
 import houseIcon from '../images/house_icon.png';
-import AnimButton from '../ui_kits/AnimButton';
 
 function HousePage() {
   const dispatch = useDispatch();
 
+  const applyIsOpen = useSelector((state) => state.modalReducer.applyIsOpen);
   const houseId = useSelector((state) => state.housesReducer.choosedHouseId);
+  const user = useSelector((state) => state.authReducer.user); // delete
+
+  const token = localStorage.getItem('token');
+  console.log('user', user);
+  console.log('token', token);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,7 +37,6 @@ function HousePage() {
 
   useEffect(() => {
     if (house) {
-      console.log(house?.agent_id);
       dispatch(
         fetchAgentById(`http://localhost:3000/agents/${house.agent_id}`)
       );
@@ -37,9 +44,10 @@ function HousePage() {
   }, [dispatch, house]);
 
   const agent = useSelector((state) => state.agentsReducer.choosedAgent);
-  console.log(agent);
+
   return (
     <>
+      {applyIsOpen && <Apply />}
       <section
         className="relative bg-no-repeat bg-cover flex justify-center flex-col items-center"
         style={{
@@ -160,7 +168,20 @@ function HousePage() {
             <h2 className="mb-2">{agent.name}</h2>
             <p className="mb-2">{agent.title}</p>
             <p className="border-2 p-2 px-10 mb-2">{agent.number}</p>
-            <AnimButton link={'/'} text="Contact agent" />
+            <button
+              className="animButton"
+              onClick={() =>
+                dispatch(
+                  openModal(
+                    token && token !== 'undefined'
+                      ? 'applyIsOpen'
+                      : 'loginIsOpen'
+                  )
+                )
+              }
+            >
+              <span>Contact agent</span>
+            </button>
           </div>
         </section>
       ) : (

@@ -19,7 +19,6 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log('sss');
     const token = localStorage.getItem('token');
     if (token && token !== 'undefined') {
       let config = {
