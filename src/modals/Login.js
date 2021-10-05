@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import jwtDecode from 'jwt-decode';
 import baseUrl from '../endpoints';
 
 import { Backdrop } from './Backdrop';
@@ -16,7 +15,6 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
 
     let data = {
       email: email,
@@ -35,16 +33,12 @@ function Login() {
     try {
       const authPromise = await axios(config);
       const authData = authPromise.data;
-      console.log(authData.token);
       window.localStorage.setItem('token', authData.token);
       dispatch(saveToken(authData.token));
-
-      let result = jwtDecode(authData.token);
-      dispatch(saveUser(result));
-
+      dispatch(saveUser(authData.user));
       dispatch(closeModal());
     } catch (error) {
-      setError(error);
+      setError(error.response.data.message);
     }
   };
 
@@ -52,7 +46,7 @@ function Login() {
     <>
       <Backdrop />
       <form className={'modal shadow-md'} onSubmit={(e) => handleSubmit(e)}>
-        {error && <div className="text-red-600">Invalid data</div>}
+        {error && <div className="text-red-600">{error}</div>}
         <div className="pt-6 flex flex-col">
           <div className="mb-4">
             <label

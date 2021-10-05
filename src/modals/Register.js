@@ -38,14 +38,14 @@ function Register() {
         const authPromise = await axios(config);
         const authData = authPromise.data;
         window.localStorage.setItem('token', authData.token);
+
         dispatch(saveToken(authData.token));
-
-        let result = jwtDecode(authData.token);
-        dispatch(saveUser(result));
-
+        dispatch(saveUser(authData.user));
         dispatch(closeModal());
       } catch (error) {
-        setError(error);
+        if (error.response.status === 401) {
+          setError(error.response.data.message);
+        }
       }
     } else {
       setError('Invalid data');

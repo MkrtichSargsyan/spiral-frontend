@@ -1,27 +1,33 @@
-import React from 'react';
+import React,{ useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo_transparent.png';
-import { openModal } from '../store/actions';
+import { openModal,saveUser } from '../store/actions';
 
 import Login from '../modals/Login';
 import Register from '../modals/Register';
 
-// const signOut = (saveUser) => {
-//   localStorage.removeItem('token');
-//   saveUser(null);
-// };
+
 
 function Header() {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.authReducer.user);
+  useEffect(() => {
+    
+  }, [user])
+  
   console.log('user', user);
 
   const loginIsOpen = useSelector((state) => state.modalReducer.loginIsOpen);
   const registerIsOpen = useSelector(
     (state) => state.modalReducer.registerIsOpen
   );
+
+  const signOut = () => {
+    localStorage.removeItem('token');
+    dispatch(saveUser(null));
+  };
 
   return (
     <>
@@ -37,14 +43,14 @@ function Header() {
               // logout component
               <div className="flex-auto items-center justify-end flex">
                 <p className="font-bold text-3xl relative w-max one">
-                  <Link className="text-2xl text-white italic font-bold cursor-pointer ">
+                  <Link className="text-2xl text-white italic font-bold cursor-pointer" to={`/users/${user.name}`}>
                     {user.name}
                   </Link>
                   <span className="absolute -bottom-1 left-0 w-0 duration-1000 transition-all h-1 bg-blue-400"></span>
                 </p>
 
                 <button
-                  // onClick={() => signOut(saveUser)}
+                  onClick={signOut}
                   className="ml-6 cursor-pointer rounded bg-gray-100 hover:bg-gray-200 px-3 py-1 border transform duration-500 hover:scale-125"
                 >
                   Sign Out

@@ -9,7 +9,6 @@ import HousePage from './pages/House.page';
 import HousesPage from './pages/Houses.page';
 import MainPage from './pages/Main.page';
 
-import jwtDecode from 'jwt-decode';
 import { saveUser } from './store/actions';
 import axios from 'axios';
 
@@ -20,6 +19,7 @@ function App() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('sss');
     const token = localStorage.getItem('token');
     if (token && token !== 'undefined') {
       let config = {
