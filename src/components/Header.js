@@ -36,7 +36,13 @@ function Header() {
             {user ? (
               // logout component
               <div className="flex-auto items-center justify-end flex">
-                {user.name}
+                <p className="font-bold text-3xl relative w-max one">
+                  <Link className="text-2xl text-white italic font-bold cursor-pointer ">
+                    {user.name}
+                  </Link>
+                  <span className="absolute -bottom-1 left-0 w-0 duration-1000 transition-all h-1 bg-blue-400"></span>
+                </p>
+
                 <button
                   // onClick={() => signOut(saveUser)}
                   className="ml-6 cursor-pointer rounded bg-gray-100 hover:bg-gray-200 px-3 py-1 border transform duration-500 hover:scale-125"

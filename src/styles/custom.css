@@ -28,20 +28,19 @@ hr {
   border-bottom: 2px solid rgb(0, 0, 0);
 }
 
-.showcaseCard:hover{
+.showcaseCard:hover {
   z-index: 4000;
 }
 
-.services li::before{
-    content: "✔ ";
-    font-size: 4vmin;
-    text-indent: -2em;
+.services li::before {
+  content: '✔ ';
+  font-size: 4vmin;
+  text-indent: -2em;
 }
 
-.bright{
+.bright {
   filter: brightness(200%);
 }
-
 
 /* modal */
 
@@ -55,7 +54,7 @@ hr {
   left: 35%;
   top: 15%;
   animation-name: modalFade;
-  animation-duration: .9s;
+  animation-duration: 0.9s;
   border-radius: 10px;
 }
 
@@ -67,12 +66,29 @@ hr {
   left: 35%;
   top: 5%;
   animation-name: modalFade;
-  animation-duration: .9s;
+  animation-duration: 0.9s;
   border-radius: 10px;
 }
 
-
 @keyframes modalFade {
-  from {transform: translateY(-50%);opacity: 0;}
-  to {transform: translateY(0);opacity: 1;}
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.one:hover span:last-child {
+  width: 100%;
+}
+
+.two:hover span {
+  width: 50%;
+}
+
+.three:hover span {
+  height: 100%;
 }
