@@ -3,11 +3,19 @@ import axios from 'axios';
 import baseUrl from '../endpoints';
 
 import { Backdrop } from './Backdrop';
-import { closeModal, saveToken, saveUser } from '../store/actions';
-import { useDispatch } from 'react-redux';
+import { chooseAgent, closeModal } from '../store/actions';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Apply() {
   const dispatch = useDispatch();
+
+  const choosedHouse = useSelector((state) => state.housesReducer.choosedHouse);
+  const choosedAgent = useSelector((state) => state.agentsReducer.choosedAgent);
+
+  console.log('choosed', choosedHouse);
+  console.log('chooseda', choosedAgent);
+
+  console.log(choosedAgent.name);
 
   // const [email, setEmail] = useState('');
   // const [password, setPassword] = useState('');
@@ -45,28 +53,33 @@ function Apply() {
   return (
     <>
       <Backdrop />
-      {/* <form className={'modal shadow-md'} onSubmit={(e) => handleSubmit(e)}> */}
-      <div className={'modal'}>
-        {!localStorage.getItem('token') && (
-          <div className="text-red-700">Please log in first</div>
-        )}
-        <div className="relative">
-          {/* <p>Are you sure you want to apply for {company_name}</p> */}
-          <div className="flex items-center justify-start flex-wrap">
-            <button
-              type="submit"
-              className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 mr-2 rounded w-max"
-            >
-              Create Account
-            </button>
-            <button
-              onClick={() => dispatch(closeModal())}
-              className="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded w-max"
-              type="button"
-            >
-              Cancel
-            </button>
-          </div>
+      <div className={'modal shadow-md'}>
+        <p className='text-center text-white text-2xl font-bold my-2'>Go Tour This Home</p>
+
+        <div className="flex flex-col mb-6 w-full">
+          <img
+            src={choosedHouse.pictures[0]}
+            alt="home_pic"
+            className="px-6 mb-2"
+          />
+          <p className="font-bold px-6 text-xl">$ {choosedHouse.price}</p>
+          <p className="font-bold px-6 text-gray-200">Seller {choosedAgent.name}</p>
+        </div>
+
+        <div className="flex items-center justify-start flex-wrap px-6">
+          <button
+            type="submit"
+            className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 mr-2 rounded w-max"
+          >
+            Send
+          </button>
+          <button
+            onClick={() => dispatch(closeModal())}
+            className="bg-red-800 hover:bg-red-900 text-white font-bold py-2 px-4 rounded w-max"
+            type="button"
+          >
+            Cancel
+          </button>
         </div>
       </div>
     </>

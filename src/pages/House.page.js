@@ -25,8 +25,8 @@ function HousePage() {
   const user = useSelector((state) => state.authReducer.user); // delete
 
   const token = localStorage.getItem('token');
-  console.log('user', user);
-  console.log('token', token);
+  // console.log('user', user);
+  // console.log('token', token);
 
   useEffect(() => {
     window.scrollTo(0, 0);
