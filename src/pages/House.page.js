@@ -22,11 +22,8 @@ function HousePage() {
 
   const applyIsOpen = useSelector((state) => state.modalReducer.applyIsOpen);
   const houseId = useSelector((state) => state.housesReducer.choosedHouseId);
-  const user = useSelector((state) => state.authReducer.user); // delete
 
   const token = localStorage.getItem('token');
-  // console.log('user', user);
-  // console.log('token', token);
 
   useEffect(() => {
     window.scrollTo(0, 0);
