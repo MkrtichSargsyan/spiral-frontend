@@ -1,12 +1,15 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import re4 from '../images/realEstate/re4.jpg';
 import userImage from '../images/userImage.png';
 import baseUrl from '../endpoints';
 import Loader from '../components/Loader';
+import { Link } from 'react-router-dom';
+import { chooseHouse } from '../store/actions';
 
 function UserPage() {
+  const dispatch = useDispatch();
   const [appointments, setAppointments] = useState([]);
 
   const user = useSelector((state) => state.authReducer.user);
@@ -27,6 +30,10 @@ function UserPage() {
       axios(config).then((res) => console.log(res.data));
     }
   }, []);
+
+  const chooseTheHouse = (id) => {
+    dispatch(chooseHouse(id));
+  };
 
   return (
     <>
@@ -60,35 +67,42 @@ function UserPage() {
         <div className="w-full h-full bg-black absolute z-10 opacity-70"></div>
       </section>
       <section className="px-40 py-20 bg-gray-300">
-        <h1 className='text-center text-5xl mb-10 font-mulish font-bold text-gray-700'>APPOINTMENTS</h1>
+        <h1 className="text-center text-5xl mb-10 font-mulish font-bold text-gray-700">
+          APPOINTMENTS
+        </h1>
         <div className="border-1 border-black flex w-full flex-col">
           {appointments ? (
             appointments.map((app, i) => (
-              <article
-                key={i}
-                className="border flex justify-between px-10 py-2 m-2 bg-gray-200 shadow-lg"
+              <Link
+                onClick={() => chooseTheHouse(app.user_house.id)}
+                to={`/houses/${app.user_house.id}`}
               >
-                <div className="flex flex-col justify-center items-center flex-1">
-                  <img
-                    src={app.agent_to_connect.photo}
-                    alt="agentPhoto"
-                    className="rounded-full w-20 mb-2"
-                  />
-                  <h2 className="w-max">{app.agent_to_connect.name}</h2>
-                </div>
-                <div className="flex flex-1 flex-col justify-around">
-                  <p className="font-semibold">
-                    House number {app.user_house.id}
-                  </p>
-                  <p>Address {app.user_house.address}</p>
-                  <p>Prise ${app.user_house.price}</p>
-                </div>
-                <div className='flex items-center'>
-                  <button className="px-3 rounded bg-red-500 text-gray-200 hover:bg-red-700 py-2 transform duration-500 hover:scale-105">
-                    Cancel
-                  </button>
-                </div>
-              </article>
+                <article
+                  key={i}
+                  className="border flex justify-between px-10 py-2 m-2 bg-gray-200 shadow-lg transform duration-500 hover:scale-105"
+                >
+                  <div className="flex flex-col justify-center items-center flex-1">
+                    <img
+                      src={app.agent_to_connect.photo}
+                      alt="agentPhoto"
+                      className="rounded-full w-20 mb-2"
+                    />
+                    <h2 className="w-max">{app.agent_to_connect.name}</h2>
+                  </div>
+                  <div className="flex flex-1 flex-col justify-around">
+                    <p className="font-semibold">
+                      House number {app.user_house.id}
+                    </p>
+                    <p>Address {app.user_house.address}</p>
+                    <p>Prise ${app.user_house.price}</p>
+                  </div>
+                  <div className="flex items-center">
+                    <button className="px-3 rounded bg-red-500 text-gray-200 hover:bg-red-700 py-2 transform duration-500 hover:scale-105">
+                      Cancel
+                    </button>
+                  </div>
+                </article>
+              </Link>
             ))
           ) : (
             <Loader />
