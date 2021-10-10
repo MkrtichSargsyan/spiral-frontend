@@ -27,11 +27,11 @@ function Header() {
       {loginIsOpen && <Login />}
       {registerIsOpen && <Register />}
       <header className="w-full absolute z-40">
-        <div className="flex justify-between px-12">
+        <div className="flex justify-between">
           <Link to="/">
-            <img className="circle w-52 h-52" src={logo} alt="img" />
+            <img className="circle w-49 h-40 md:w-52 md:h-52" src={logo} alt="img" />
           </Link>
-          <div className="items-center justify-end flex">
+          <div className="items-center justify-end flex pr-4">
             {user ? (
               // logout component
               <div className="flex-auto items-center justify-end flex">
