@@ -26,18 +26,18 @@ function Header() {
     <>
       {loginIsOpen && <Login />}
       {registerIsOpen && <Register />}
-      <header className="w-full absolute z-40">
-        <div className="flex justify-between">
+      <header className="w-full absolute z-40 md:px-12">
+        <div className="flex justify-around md:justify-between">
           <Link to="/">
-            <img className="circle w-49 h-40 md:w-52 md:h-52" src={logo} alt="img" />
+            <img className="circle w-28 h-28 md:w-52 md:h-52" src={logo} alt="img" />
           </Link>
-          <div className="items-center justify-end flex pr-4">
+          <div className="items-center justify-end flex md:pr-4">
             {user ? (
               // logout component
               <div className="flex-auto items-center justify-end flex">
                 <p className="font-bold text-3xl relative w-max one">
                   <Link
-                    className="text-2xl text-white italic font-bold cursor-pointer"
+                    className="text-lg text-white italic font-bold cursor-pointer"
                     to={`/users/${user.name}`}
                   >
                     {user.name}
@@ -47,7 +47,7 @@ function Header() {
 
                 <button
                   onClick={signOut}
-                  className="ml-6 cursor-pointer rounded bg-gray-100 hover:bg-gray-200 px-3 py-1 border transform duration-500 hover:scale-125"
+                  className="ml-2 md:ml-6 cursor-pointer rounded bg-gray-100 hover:bg-gray-200 px-3 py-1 border transform duration-500 hover:scale-125"
                 >
                   Sign Out
                 </button>
