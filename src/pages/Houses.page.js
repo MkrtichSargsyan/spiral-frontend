@@ -9,7 +9,6 @@ function HousesPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     dispatch(fetchHouses('http://localhost:3000/houses'));
   }, [dispatch]);
 

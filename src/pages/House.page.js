@@ -26,7 +26,6 @@ function HousePage() {
   const token = localStorage.getItem('token');
 
   useEffect(() => {
-    window.scrollTo(0, 0);
     dispatch(fetchHouseById(`http://localhost:3000/houses/${houseId}`));
   }, [dispatch, houseId]);
 

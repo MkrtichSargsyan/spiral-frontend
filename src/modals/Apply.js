@@ -2,6 +2,8 @@ import React from 'react';
 import axios from 'axios';
 import baseUrl from '../endpoints';
 
+import { toast } from 'react-toastify';
+
 import { Backdrop } from './Backdrop';
 import { closeModal } from '../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +16,10 @@ function Apply() {
   const user = useSelector((state) => state.authReducer.user);
   const choosedHouse = useSelector((state) => state.housesReducer.choosedHouse);
   const choosedAgent = useSelector((state) => state.agentsReducer.choosedAgent);
+
+  const notify = () => toast.success('Our agent will contact you soon',{
+    autoClose:3000
+  });
 
   const send = async () => {
     const token = localStorage.getItem('token');
@@ -37,7 +43,7 @@ function Apply() {
       }
       history.push(`/users/${user.name}`)
       dispatch(closeModal());
-      // openModal('flashIsOpen');
+      notify()
     }
   };
 

@@ -7,14 +7,19 @@ import baseUrl from '../endpoints';
 import Loader from '../components/Loader';
 import { Link } from 'react-router-dom';
 import { chooseHouse } from '../store/actions';
-import { useHistory } from 'react-router';
+
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function UserPage() {
   const dispatch = useDispatch();
-  let history = useHistory();
 
   const [appointments, setAppointments] = useState([]);
   const user = useSelector((state) => state.authReducer.user);
+
+  const notify = () => toast.success('Appointment successfully removed!',{
+    autoClose:3000
+  });
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -30,13 +35,14 @@ function UserPage() {
 
       axios(config).then((res) => setAppointments(res.data));
     }
-  }, []);
+  }, [appointments]);
 
   const chooseTheHouse = (id) => {
     dispatch(chooseHouse(id));
   };
 
-  const cancelAppointment = async (id) => {
+  const cancelAppointment = async (e, id) => {
+    e.preventDefault();
     const token = localStorage.getItem('token');
 
     if (token && token !== 'undefined') {
@@ -52,11 +58,10 @@ function UserPage() {
         },
       };
       try {
-        await axios(config);
+        await axios(config).then(notify());
       } catch (error) {
         alert(error);
       }
-      history.push(`/users/${user.name}`);
     }
   };
 
@@ -72,6 +77,8 @@ function UserPage() {
           backgroundImage: `url(${re4})`,
         }}
       >
+        <ToastContainer />
+
         <div>
           <div className="text-center z-40 mt-40 flex justify-center w-max">
             <div className="w-40 h-40 rounded-full">
@@ -122,7 +129,9 @@ function UserPage() {
                     </div>
                     <div className="flex items-center">
                       <button
-                        onClick={() => cancelAppointment(app.appointment_id)}
+                        onClick={(e) =>
+                          cancelAppointment(e, app.appointment_id)
+                        }
                         className="px-3 rounded bg-red-500 text-gray-200 hover:bg-red-700 py-2 transform duration-500 hover:scale-105"
                       >
                         Cancel
