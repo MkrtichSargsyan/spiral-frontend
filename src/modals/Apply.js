@@ -5,10 +5,13 @@ import baseUrl from '../endpoints';
 import { Backdrop } from './Backdrop';
 import { closeModal } from '../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 
 function Apply() {
   const dispatch = useDispatch();
+  let history = useHistory();
 
+  const user = useSelector((state) => state.authReducer.user);
   const choosedHouse = useSelector((state) => state.housesReducer.choosedHouse);
   const choosedAgent = useSelector((state) => state.agentsReducer.choosedAgent);
 
@@ -18,14 +21,13 @@ function Apply() {
     if (token && token !== 'undefined') {
       let config = {
         method: 'post',
-        url: `${baseUrl}/apply`,
+        url: `${baseUrl}apply`,
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
         data: {
           house_id: choosedHouse.id,
-          // agent
         },
       };
       try {
@@ -33,6 +35,7 @@ function Apply() {
       } catch (error) {
         alert(error);
       }
+      history.push(`/users/${user.name}`)
       dispatch(closeModal());
       // openModal('flashIsOpen');
     }
