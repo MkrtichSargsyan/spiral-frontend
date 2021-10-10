@@ -22,7 +22,6 @@ function HousesPage() {
         style={{
           height: '80vh',
           transition: 'all 2s ease-in-out',
-          // backgroundSize: 'cover',
           backgroundImage: `url(${re2})`,
         }}
       >
