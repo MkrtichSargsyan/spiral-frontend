@@ -37,7 +37,7 @@ function Header() {
               <div className="flex-auto items-center justify-end flex">
                 <p className="font-bold text-3xl relative w-max one">
                   <Link
-                    className="text-lg text-white italic font-bold cursor-pointer"
+                    className="text-lg md:text-3xl text-white italic font-bold cursor-pointer"
                     to={`/users/${user.name}`}
                   >
                     {user.name}
