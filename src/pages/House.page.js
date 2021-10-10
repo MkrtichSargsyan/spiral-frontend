@@ -80,8 +80,8 @@ function HousePage() {
             </Carousel>
           </section>
           <section className="py-10 bg-gray-300 flex flex-col items-center">
-            <div className="w-2/3 flex bg-white">
-              <article className="w-3/4 pl-6 pt-10 flex flex-col justify-center border-r-2 pr-4">
+            <div className="md:w-2/3 flex flex-col md:flex-row bg-white">
+              <article className="md:w-3/4 pl-6 pt-10 flex flex-col justify-center border-b-2 md:border-r-2 pr-4">
                 <div className="flex items-center w-10 h-10 mb-4">
                   <img
                     src={houseIcon}
@@ -107,8 +107,8 @@ function HousePage() {
                 </ol>
               </article>
               {/* aside */}
-              <aside className="w-1/4 flex flex-col py-10 pl-4">
-                <div className="flex items-center py-5">
+              <aside className="md:w-1/4 flex  flex-row md:flex-col py-10 md:pl-4 flex-wrap">
+                <div className="flex items-center py-5 w-1/2 justify-center">
                   <img
                     src={bedroomIcon}
                     alt="bedroomIcon"
@@ -116,7 +116,7 @@ function HousePage() {
                   />
                   <span>{house.bedrooms} bedrooms</span>
                 </div>
-                <div className="flex items-center py-5">
+                <div className="flex items-center py-5 w-1/2 justify-center">
                   <img
                     src={bathroomIcon}
                     alt="bathroomIcon"
@@ -124,11 +124,11 @@ function HousePage() {
                   />
                   <span>{house.bathrooms} bathrooms</span>
                 </div>
-                <div className="flex items-center py-5">
+                <div className="flex items-center py-5 w-1/2 justify-center">
                   <img src={sqftIcon} alt="sqft" className="w-5 h-5 mr-3" />
                   <span>{house.sqft} sqft</span>
                 </div>
-                <div className="flex items-center py-5">
+                <div className="flex items-center py-5 w-1/2 justify-center">
                   <img
                     src={acresIcon}
                     alt="acresIcon"
@@ -145,7 +145,7 @@ function HousePage() {
       )}
       {/* agent section */}
 
-      {agent && house ? (
+      {/* {agent && house ? (
         <section className="bg-gray-300 flex pb-8">
           <iframe
             title="myFrame"
@@ -182,7 +182,7 @@ function HousePage() {
         </section>
       ) : (
         <Loader />
-      )}
+      )} */}
     </>
   );
 }
