@@ -92,3 +92,7 @@ hr {
 .three:hover span {
   height: 100%;
 }
+
+footer{
+  height: 520px;
+}

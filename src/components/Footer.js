@@ -12,23 +12,23 @@ import footerbg from '../images/footerbg.png';
 
 function Footer() {
   return (
-    <footer className="relative h-96">
+    <footer className="relative md:h-96">
       <div className="w-full bottom-0 h-full bg-black absolute z-10 opacity-95"></div>
       <div className="absolute bottom-0 w-full h-full">
         <img className="w-full h-full logo" src={footerbg} alt="footerbg" />
       </div>
       <div className="z-30 bottom-0 absolute w-full flex flex-col px-4 py-6">
-        <div className="flex items-center my-12">
+        <div className="flex items-center md:my-12 flex-col md:flex-row">
           <div className="flex-1 text-white text-center text-2xl">
             (919) 382-2001
           </div>
           <div className="flex-1 flex justify-center">
             <Link to="/">
-              <img className="circle w-40 h-40" src={logo} alt="img" />
+              <img className="circle w-52 h-52 md:w-40 md:h-40" src={logo} alt="img" />
             </Link>
           </div>
-          <div className="flex-1">
-            <ul className="flex justify-between w-3/4 m-auto">
+          <div className="w-full md:w-min flex-1">
+            <ul className="flex justify-around w-3/4 m-auto">
               <li>
                 <img className="w-8 h-8" src={f} alt="facebook" />
               </li>
@@ -48,9 +48,9 @@ function Footer() {
           </div>
         </div>
 
-        <div className="flex justify-around items-center">
-          <div className="flex-1">
-            <div className="w-2/5 flex justify-between m-auto">
+        <div className="flex justify-around items-center flex-col md:flex-row mt-6 md:mt-0">
+          <div className="flex-1 w-1/3 order-1 md:order-none">
+            <div className="w-full md:w-1/3 flex justify-between m-auto">
               <span>
                 <img className="w-10 h-10" src={h} alt="house" />
               </span>
@@ -59,13 +59,13 @@ function Footer() {
               </span>
             </div>
           </div>
-          <div className="flex-1">
-            <p className="text-white w-1/2 m-auto text-center">
+          <div className="flex-1 mb-8 md:mb-0">
+            <p className="text-white md:w-1/2 m-auto text-center">
               1901 Hillandale Rd, Suite 100 Durham, NC 27705
             </p>
           </div>
-          <div className="flex-1">
-            <p className="text-white w-1/2 m-auto text-center">
+          <div className="flex-1 mb-4 md:mb-0">
+            <p className="text-white md:w-1/2 m-auto text-center">
               © 2021 West & Woodall Real Estate <br /> All Rights Reserved
             </p>
           </div>
