@@ -13,8 +13,8 @@ function Card({
   colorHover,
 }) {
   return (
-    <article className="showcaseCard flex flex-col flex-1 bg-gray-100 items-center text-center transform duration-1000 hover:scale-110 shadow-xl z-40 rounded-sm">
-      <div className="w-20 h-20 my-10">
+    <article className="showcaseCard mb-6 md:mb-0 flex flex-col flex-1 bg-gray-100 items-center text-center transform duration-1000 hover:scale-110 shadow-xl z-40 rounded-sm">
+      <div className="w-40 h-40 md:w-20 md:h-20 my-10">
         <img
           src={icon}
           alt={iconName}
@@ -22,7 +22,7 @@ function Card({
         />
       </div>
       <h2 className="font-bold text-2xl mb-6 font-serif">{title}</h2>
-      <p className="px-12 text-lg text-gray-500 mb-8">{description}</p>
+      <p className="flex-1 px-8 md:px-12 text-lg text-gray-500 mb-8">{description}</p>
 
       <Link
         to={link}
