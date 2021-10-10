@@ -5,7 +5,7 @@ import Card from './Card';
 
 function Cards() {
   return (
-    <div className="w-3/5 absolute -bottom-56 flex flex-col md:flex-row">
+    <div className="w-full md:w-10/12 lg:w-5/6 xl:w-3/5 px-8 absolute -bottom-56 flex flex-col md:flex-row">
       <Card
         icon={homeIcon}
         iconName="homeIcon"
