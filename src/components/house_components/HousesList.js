@@ -3,7 +3,7 @@ import HousePreview from './HousePreview';
 
 function HousesList({ allHouses }) {
   return (
-    <div className="border-1 border-black flex w-full flex-wrap">
+    <div className="py-4 md:py-0 border-1 border-black flex w-full flex-wrap">
       {allHouses &&
         allHouses.map((house) => (
           <HousePreview

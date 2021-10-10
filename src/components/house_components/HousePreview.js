@@ -22,7 +22,7 @@ function HousePreview({ id, pictures, price, address, bedrooms, bathrooms }) {
   };
 
   return (
-    <article className="w-1/3 p-3 mb-10 cursor-pointer" data-tilt>
+    <article className="sm:w-1/2 lg:w-1/3 p-6 md:p-3 mb:6 md:mb-10 cursor-pointer" data-tilt>
       <Link onClick={() => chooseTheHouse(id)} to={`/houses/${id}`}>
         <Tilt options={options}>
           <div className=" rounded flex flex-col items-center">
