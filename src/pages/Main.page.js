@@ -7,7 +7,7 @@ import WhatWeDo from '../components/mainPage_components/WhatWeDo';
 
 function MainPage() {
   return (
-    <section className="relative">
+    <section className="relative bg-gray-300">
       <Showcase />
       <AboutUs />
       <WhatWeDo />
