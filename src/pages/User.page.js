@@ -81,15 +81,15 @@ function UserPage() {
 
         <div>
           <div className="text-center z-40 mt-40 flex justify-center w-max">
-            <div className="w-40 h-40 rounded-full">
+            <div className="w-20 h-20 md:w-40 md:h-40 rounded-full">
               <img
                 src={userImage}
                 alt="agent_photo"
-                className="w-40 h-40 rounded-full"
+                className="w-20 h-20 md:w-40 md:h-40 rounded-full"
               />
             </div>
             <div className="flex flex-col items-start justify-center">
-              <h1 className="text-5xl text-white capitalize mb-2 italic">
+              <h1 className="text-3xl md:text-5xl text-white capitalize mb-2 italic">
                 {user.name}
               </h1>
               <h2 className="text-gray-500 text-3xl italic">{user.email}</h2>
@@ -98,8 +98,8 @@ function UserPage() {
         </div>
         <div className="w-full h-full bg-black absolute z-10 opacity-70"></div>
       </section>
-      <section className="px-40 py-20 bg-gray-300">
-        <h1 className="text-center text-5xl mb-10 font-mulish font-bold text-gray-700">
+      <section className="md:px-40 py-20 bg-gray-300">
+        <h1 className="text-center text-3xl md:text-5xl mb-10 font-mulish font-bold text-gray-700">
           APPOINTMENTS
         </h1>
         <div className="border-1 border-black flex w-full flex-col">
@@ -111,7 +111,7 @@ function UserPage() {
                   to={`/houses/${app.user_house.id}`}
                   key={i}
                 >
-                  <article className="border flex justify-between px-10 py-2 m-2 bg-gray-200 shadow-lg transform duration-500 hover:scale-105">
+                  <article className="border flex flex-col sm:flex-row items-center justify-between px-10 py-2 m-2 bg-gray-200 shadow-lg transform duration-500 hover:scale-105">
                     <div className="flex flex-col justify-center items-center flex-1">
                       <img
                         src={app.agent_to_connect.photo}
@@ -120,7 +120,7 @@ function UserPage() {
                       />
                       <h2 className="w-max">{app.agent_to_connect.name}</h2>
                     </div>
-                    <div className="flex flex-1 flex-col justify-around">
+                    <div className="flex flex-1 mb-8 sm:mb-0 flex-col text-center sm:text-left justify-around">
                       <p className="font-semibold">
                         House number {app.user_house.id}
                       </p>
