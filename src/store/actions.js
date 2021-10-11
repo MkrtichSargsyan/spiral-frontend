@@ -64,7 +64,6 @@ const fetchAgentHousesSuccess = (agentHousesList) => {
   };
 };
 
-
 export const fetchAgentById = (url) => {
   return async (dispatch) => {
     try {
@@ -83,8 +82,7 @@ const fetchAgentByIdSuccess = (choosedAgent) => {
   };
 };
 
-
-// ------------------- fetch houses
+// fetch houses
 
 export const fetchHouses = (url) => {
   return async (dispatch) => {
@@ -148,36 +146,35 @@ const fetchHouseByIdSuccess = (choosedHouse) => {
   };
 };
 
-
 // save user
 
-export const saveUser = (user) =>{
+export const saveUser = (user) => {
   return {
     type: types.SAVE_USER,
-    user
-  }
-}
+    user,
+  };
+};
 
 // save token
 
-export const saveToken = (token) =>{
+export const saveToken = (token) => {
   return {
     type: types.SAVE_TOKEN,
-    token
-  }
-}
+    token,
+  };
+};
 
 // modal actions
 
 export const openModal = (modalType) => {
   return {
-      type: types.OPEN_MODAL,
-      payload:modalType
-  }
+    type: types.OPEN_MODAL,
+    payload: modalType,
+  };
 };
 
 export const closeModal = () => {
   return {
-      type: types.CLOSE_MODAL,
-  }
+    type: types.CLOSE_MODAL,
+  };
 };

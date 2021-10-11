@@ -10,16 +10,16 @@ function Showcase() {
   const bgImages = [re1, re2, re3, re4];
   let [currentBg, setCurrentBg] = useState(0);
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     if (currentBg === bgImages.length) {
-  //       setCurrentBg(0);
-  //     } else {
-  //       setCurrentBg(currentBg++);
-  //     }
-  //   }, 1000);
-  //   return () => clearInterval(interval);
-  // });
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentBg === bgImages.length) {
+        setCurrentBg(0);
+      } else {
+        setCurrentBg(currentBg++);
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  });
 
   return (
     <section
@@ -27,7 +27,6 @@ function Showcase() {
       style={{
         width: '100%',
         transition: 'all 1s ease-in-out',
-        // backgroundSize: 'cover',
         backgroundImage: `url(${bgImages[currentBg]})`,
       }}
     >

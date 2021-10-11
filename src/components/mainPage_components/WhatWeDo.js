@@ -33,9 +33,7 @@ function WhatWeDo() {
           lg:top-auto
           lg:my-auto
           lg:h-4/5
-          lg:left-3/4
-          "
-          
+          lg:left-3/4"
         >
           <h3 className="mb-6 font-serif">WHAT WE DO</h3>
           <p className="mb-6 font-serif">

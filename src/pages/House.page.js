@@ -54,7 +54,6 @@ function HousePage() {
           backgroundImage: `url(${re4})`,
         }}
       >
-     
         {house && (
           <div className="text-center z-40 w-full flex flex-col items-center">
             <address className="text-5xl md:text-6xl md:mt-10 text-white md:w-2/5 mb-3 font-caramel mt-10">

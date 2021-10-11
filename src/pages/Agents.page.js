@@ -1,4 +1,3 @@
-/* eslint-disable no-undef */
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import AgentsList from '../components/agent_components/AgentsList';
