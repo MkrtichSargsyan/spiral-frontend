@@ -58,16 +58,11 @@ hr {
   border-radius: 10px;
 }
 
-.flash {
-  position: fixed;
-  z-index: 1102;
-  width: 30%;
-  padding: 16px;
-  left: 35%;
-  top: 5%;
-  animation-name: modalFade;
-  animation-duration: 0.9s;
-  border-radius: 10px;
+@media only screen and (max-width: 768px) {
+  .modal {
+    width: 50%;
+    left: 28%
+  }
 }
 
 @keyframes modalFade {
