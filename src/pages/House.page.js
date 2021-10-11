@@ -146,15 +146,15 @@ function HousePage() {
       )}
       {/* agent section */}
 
-      {/* {agent && house ? (
-        <section className="bg-gray-300 flex pb-8">
+      {agent && house ? (
+        <section className="bg-gray-300 pb-8 flex flex-col md:flex-row">
           <iframe
             title="myFrame"
-            className="flex-1"
+            className="flex-1 h-96 md:h-auto"
             height="600"
             src={`https://maps.google.com/maps?q=${house.lat},${house.long}&t=k&z=11&ie=UTF8&iwloc=&output=embed`}
           ></iframe>
-          <div className="w-1/3 bg-black opacity-90 flex flex-col items-center text-white justify-center">
+          <div className="w-full md:w-1/3 bg-black opacity-90 flex flex-col items-center text-white justify-center">
             <div className="w-40 h-40 mb-4">
               <img
                 src={agent.photo}
@@ -183,7 +183,7 @@ function HousePage() {
         </section>
       ) : (
         <Loader />
-      )} */}
+      )}
     </>
   );
 }
