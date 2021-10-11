@@ -54,9 +54,10 @@ function HousePage() {
           backgroundImage: `url(${re4})`,
         }}
       >
+     
         {house && (
           <div className="text-center z-40 w-full flex flex-col items-center">
-            <address className="text-6xl text-white w-2/5 mb-3 font-caramel mt-10">
+            <address className="text-5xl md:text-6xl md:mt-10 text-white md:w-2/5 mb-3 font-caramel mt-10">
               {house && house.address}
             </address>
           </div>
@@ -70,7 +71,7 @@ function HousePage() {
               interval={1500}
               autoPlay
               infiniteLoop
-              className="w-2/3 -mt-28 z-10"
+              className="w-full px-4 sm:w-3/4 lg:px-0 lg:w-2/3 -mt-28 z-10"
             >
               {house.pictures.map((pic, i) => (
                 <div key={i}>
@@ -107,8 +108,8 @@ function HousePage() {
                 </ol>
               </article>
               {/* aside */}
-              <aside className="md:w-1/4 flex  flex-row md:flex-col py-10 md:pl-4 flex-wrap">
-                <div className="flex items-center py-5 w-1/2 justify-center">
+              <aside className="md:w-1/4 flex  flex-row md:flex-col md:py-10 md:pl-4 flex-wrap">
+                <div className="flex items-center py-3 md:py-5 w-1/2 justify-center">
                   <img
                     src={bedroomIcon}
                     alt="bedroomIcon"
@@ -116,7 +117,7 @@ function HousePage() {
                   />
                   <span>{house.bedrooms} bedrooms</span>
                 </div>
-                <div className="flex items-center py-5 w-1/2 justify-center">
+                <div className="flex items-center py-3 md:py-5 w-1/2 justify-center">
                   <img
                     src={bathroomIcon}
                     alt="bathroomIcon"
@@ -124,11 +125,11 @@ function HousePage() {
                   />
                   <span>{house.bathrooms} bathrooms</span>
                 </div>
-                <div className="flex items-center py-5 w-1/2 justify-center">
+                <div className="flex items-center py-3 md:py-5 w-1/2 justify-center">
                   <img src={sqftIcon} alt="sqft" className="w-5 h-5 mr-3" />
                   <span>{house.sqft} sqft</span>
                 </div>
-                <div className="flex items-center py-5 w-1/2 justify-center">
+                <div className="flex items-center py-3 md:py-5 w-1/2 justify-center">
                   <img
                     src={acresIcon}
                     alt="acresIcon"
