@@ -58,10 +58,18 @@ hr {
   border-radius: 10px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 910px) {
   .modal {
     width: 50%;
-    left: 28%
+    left: 27%
+  }
+}
+
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 80%;
+    left: 10%
   }
 }
 
