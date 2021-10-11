@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function AnimButton({ link, text }) {
@@ -10,5 +11,10 @@ function AnimButton({ link, text }) {
     </Link>
   );
 }
+
+AnimButton.propTypes = {
+  link: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
+};
 
 export default AnimButton;

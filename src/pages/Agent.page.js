@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import AgentHouses from '../components/agent_components/AgentHouses';
 import re4 from '../images/realEstate/re4.jpg';
@@ -55,5 +56,19 @@ function AgentPage(props) {
     </>
   );
 }
+
+AgentPage.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  photo: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+};
+
+AgentPage.defaultProps = {
+  id: 0,
+  name: '',
+  photo: '',
+  number: '',
+};
 
 export default AgentPage;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Tilt from '../../ui_kits/Tilt';
 import { useDispatch } from 'react-redux';
 
@@ -60,5 +61,14 @@ function HousePreview({ id, pictures, price, address, bedrooms, bathrooms }) {
     </article>
   );
 }
+
+HousePreview.propTypes = {
+  id: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
+  address: PropTypes.string.isRequired,
+  bedrooms: PropTypes.string.isRequired,
+  bathrooms: PropTypes.string.isRequired,
+  pictures: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default HousePreview;

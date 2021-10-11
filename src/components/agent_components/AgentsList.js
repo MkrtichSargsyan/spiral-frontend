@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function AgentsList({ allAgents }) {
@@ -28,5 +29,9 @@ function AgentsList({ allAgents }) {
     </div>
   );
 }
+
+AgentsList.propTypes = {
+  allAgents: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default AgentsList;

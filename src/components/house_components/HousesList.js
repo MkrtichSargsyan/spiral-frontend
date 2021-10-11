@@ -1,5 +1,6 @@
 import React from 'react';
 import HousePreview from './HousePreview';
+import PropTypes from 'prop-types';
 
 function HousesList({ allHouses }) {
   return (
@@ -19,5 +20,9 @@ function HousesList({ allHouses }) {
     </div>
   );
 }
+
+HousesList.propTypes = {
+  allHouses: PropTypes.instanceOf(Object).isRequired,
+};
 
 export default HousesList;

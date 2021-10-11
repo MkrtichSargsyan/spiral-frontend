@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 function Card({
   icon,
@@ -21,7 +22,9 @@ function Card({
         />
       </div>
       <h2 className="font-bold text-2xl mb-6 font-serif">{title}</h2>
-      <p className="flex-1 px-8 md:px-12 text-lg text-gray-500 mb-8">{description}</p>
+      <p className="flex-1 px-8 md:px-12 text-lg text-gray-500 mb-8">
+        {description}
+      </p>
 
       <Link
         to={link}
@@ -32,5 +35,16 @@ function Card({
     </article>
   );
 }
+
+Card.propTypes = {
+  icon: PropTypes.string.isRequired,
+  iconName: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  buttonText: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  color: PropTypes.string.isRequired,
+  colorHover: PropTypes.string.isRequired,
+};
 
 export default Card;
