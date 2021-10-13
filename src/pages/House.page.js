@@ -1,16 +1,14 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Carousel } from 'react-responsive-carousel';
 import Loader from '../components/Loader';
 import re4 from '../images/realEstate/re4.jpg';
-import { fetchAgentById, fetchHouseById } from '../store/actions';
+import { fetchAgentById, fetchHouseById, openModal } from '../store/actions';
 import baseUrl from '../endpoints';
 
-import { openModal } from '../store/actions';
 import Apply from '../modals/Apply';
 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import { Carousel } from 'react-responsive-carousel';
 
 import bedroomIcon from '../images/houseIcons/bedroom.png';
 import bathroomIcon from '../images/houseIcons/bathroom.png';
@@ -58,7 +56,7 @@ function HousePage() {
             </address>
           </div>
         )}
-        <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
+        <div className="w-full h-full bg-black absolute z-10 opacity-75" />
       </section>
       {house ? (
         <>
@@ -69,8 +67,8 @@ function HousePage() {
               infiniteLoop
               className="w-full px-4 sm:w-3/4 lg:px-0 lg:w-2/3 -mt-28 z-10"
             >
-              {house.pictures.map((pic, i) => (
-                <div key={i}>
+              {house.pictures.map((pic) => (
+                <div key={house.id}>
                   <img src={pic} alt="home_pic" />
                 </div>
               ))}
@@ -86,16 +84,17 @@ function HousePage() {
                     className="w-full mr-3"
                   />
                   <span className="text-2xl text-gray-600 font-bold">
-                    ${house.price}
+                    $
+                    {house.price}
                   </span>
                 </div>
                 <p>{house.description}</p>
 
                 <h3 className="text-gray-500 mt-8">FEATURES</h3>
                 <ol type="i" className="flex flex-wrap justify-around my-4">
-                  {house.features.map((feature, i) => (
+                  {house.features.map((feature) => (
                     <li
-                      key={i}
+                      key={house.id}
                       className="w-1/2 list-item list-disc list-inside mb-2 text-lg text-gray-500"
                     >
                       {feature}
@@ -111,7 +110,11 @@ function HousePage() {
                     alt="bedroomIcon"
                     className="w-5 h-5 mr-3"
                   />
-                  <span>{house.bedrooms} bedrooms</span>
+                  <span>
+                    {house.bedrooms}
+                    {' '}
+                    bedrooms
+                  </span>
                 </div>
                 <div className="flex items-center py-3 md:py-5 w-1/2 md:w-full justify-center md:justify-start">
                   <img
@@ -119,11 +122,19 @@ function HousePage() {
                     alt="bathroomIcon"
                     className="w-5 h-5 mr-3"
                   />
-                  <span>{house.bathrooms} bathrooms</span>
+                  <span>
+                    {house.bathrooms}
+                    {' '}
+                    bathrooms
+                  </span>
                 </div>
                 <div className="flex items-center py-3 md:py-5 w-1/2 md:w-full justify-center md:justify-start">
                   <img src={sqftIcon} alt="sqft" className="w-5 h-5 mr-3" />
-                  <span>{house.sqft} sqft</span>
+                  <span>
+                    {house.sqft}
+                    {' '}
+                    sqft
+                  </span>
                 </div>
                 <div className="flex items-center py-3 md:py-5 w-1/2 md:w-full justify-center md:justify-start">
                   <img
@@ -131,7 +142,11 @@ function HousePage() {
                     alt="acresIcon"
                     className="w-5 h-5 mr-3"
                   />
-                  <span>{house.acres} acres</span>
+                  <span>
+                    {house.acres}
+                    {' '}
+                    acres
+                  </span>
                 </div>
               </aside>
             </div>
@@ -149,7 +164,7 @@ function HousePage() {
             className="flex-1 h-96 md:h-auto"
             height="600"
             src={`https://maps.google.com/maps?q=${house.lat},${house.long}&t=k&z=11&ie=UTF8&iwloc=&output=embed`}
-          ></iframe>
+          />
           <div className="w-full md:w-1/3 bg-black opacity-90 flex flex-col items-center text-white justify-center">
             <div className="w-40 h-40 mb-4">
               <img
@@ -163,6 +178,7 @@ function HousePage() {
             <p className="border-2 p-2 px-10 mb-2">{agent.number}</p>
             <button
               className="animButton"
+              type="submit"
               onClick={() => {
                 const token = localStorage.getItem('token');
                 if (token && token !== 'undefined') {

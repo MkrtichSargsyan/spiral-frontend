@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import axios from 'axios';
+import { useDispatch } from 'react-redux';
 import baseUrl from '../endpoints';
 
-import { Backdrop } from './Backdrop';
+import Backdrop from './Backdrop';
 import { closeModal, saveToken, saveUser } from '../store/actions';
-import { useDispatch } from 'react-redux';
 
 function Login() {
   const dispatch = useDispatch();
@@ -16,18 +17,18 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let data = {
-      email: email,
-      password: password,
+    const data = {
+      email,
+      password,
     };
 
-    let config = {
+    const config = {
       method: 'post',
       url: `${baseUrl}/login`,
       headers: {
         'Content-Type': 'application/json',
       },
-      data: data,
+      data,
     };
 
     try {
@@ -45,7 +46,7 @@ function Login() {
   return (
     <>
       <Backdrop />
-      <form className={'modal shadow-md'} onSubmit={(e) => handleSubmit(e)}>
+      <form className="modal shadow-md" onSubmit={(e) => handleSubmit(e)}>
         {error && <div className="text-red-600">{error}</div>}
         <div className="pt-6 flex flex-col">
           <div className="mb-4">

@@ -1,31 +1,30 @@
 import React from 'react';
 import axios from 'axios';
-import baseUrl from '../endpoints';
-
 import { toast } from 'react-toastify';
-
-import { Backdrop } from './Backdrop';
-import { closeModal } from '../store/actions';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
+import baseUrl from '../endpoints';
+
+import Backdrop from './Backdrop';
+import { closeModal } from '../store/actions';
 
 function Apply() {
   const dispatch = useDispatch();
-  let history = useHistory();
+  const history = useHistory();
 
   const user = useSelector((state) => state.authReducer.user);
   const choosedHouse = useSelector((state) => state.housesReducer.choosedHouse);
   const choosedAgent = useSelector((state) => state.agentsReducer.choosedAgent);
 
-  const notify = () => toast.success('Our agent will contact you soon',{
-    autoClose:3000
+  const notify = () => toast.success('Our agent will contact you soon', {
+    autoClose: 3000,
   });
 
   const send = async () => {
     const token = localStorage.getItem('token');
 
     if (token && token !== 'undefined') {
-      let config = {
+      const config = {
         method: 'post',
         url: `${baseUrl}/apply`,
         headers: {
@@ -41,16 +40,16 @@ function Apply() {
       } catch (error) {
         alert(error);
       }
-      history.push(`/users/${user.name}`)
+      history.push(`/users/${user.name}`);
       dispatch(closeModal());
-      notify()
+      notify();
     }
   };
 
   return (
     <>
       <Backdrop />
-      <div className={'modal shadow-md'}>
+      <div className="modal shadow-md">
         <p className="text-center text-white text-2xl font-bold my-2">
           Go Tour This Home
         </p>
@@ -65,15 +64,21 @@ function Apply() {
             alt="home_pic"
             className="px-6 mb-2"
           />
-          <p className="font-bold px-6 text-xl">$ {choosedHouse.price}</p>
+          <p className="font-bold px-6 text-xl">
+            $
+            {choosedHouse.price}
+          </p>
           <p className="font-bold px-6 text-gray-200 italic">
-            Seller {choosedAgent.name}
+            Seller
+            {' '}
+            {choosedAgent.name}
           </p>
         </div>
 
         <div className="flex items-center justify-start flex-wrap px-6">
           <button
             onClick={() => send(choosedHouse)}
+            type="button"
             className="bg-blue-800 hover:bg-blue-900 text-white font-bold py-2 px-4 mr-2 rounded w-max"
           >
             Send
@@ -90,6 +95,5 @@ function Apply() {
     </>
   );
 }
-
 
 export default Apply;

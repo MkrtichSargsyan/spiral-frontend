@@ -1,14 +1,21 @@
+/* eslint-disable react/no-unescaped-entities */
+/* eslint-disable react/destructuring-assignment */
+/* eslint-disable react/prop-types */
+/* eslint-disable react/default-props-match-prop-types */
+/* eslint-disable react/require-default-props */
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import AgentHouses from '../components/agent_components/AgentHouses';
 import re4 from '../images/realEstate/re4.jpg';
 import { chooseAgent, fetchAgentHouses } from '../store/actions';
-import baseUrl from '../endpoints'
+import baseUrl from '../endpoints';
 
 function AgentPage(props) {
   const dispatch = useDispatch();
-  const { id, name, title, photo, number } = props.location.state;
+  const {
+    id, name, title, photo, number,
+  } = props.location.state;
 
   useEffect(() => {
     dispatch(chooseAgent(props.location.state));
@@ -46,11 +53,12 @@ function AgentPage(props) {
             {number}
           </p>
         </div>
-        <div className="w-full h-full bg-black absolute z-10 opacity-70"></div>
+        <div className="w-full h-full bg-black absolute z-10 opacity-70" />
       </section>
       <section className="bg-gray-300 p-8 md:p-14">
         <h3 className="text-2xl md:text-4xl w-max text-gray-900 pb-2 border-b-2 border-blue-900 mb-20">
-          {name}'s Listings
+          {name}
+          's Listings
         </h3>
         <AgentHouses />
       </section>

@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import whatWeDoBg from '../../images/whatWeDo.jpeg';
 
@@ -28,7 +29,7 @@ function WhatWeDo() {
           lg:w-6/12
           inset-x-0
           border
-        bg-white 
+        bg-white
           shadow-2xl
           lg:top-auto
           lg:my-auto

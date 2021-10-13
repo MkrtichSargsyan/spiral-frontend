@@ -8,7 +8,7 @@ const initialState = {
   agentHouses: [],
 };
 
-export const agentsReducer = (state = initialState, action) => {
+const agentsReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCH_AGENTS_START:
       return {
@@ -46,3 +46,5 @@ export const agentsReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default agentsReducer;

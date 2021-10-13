@@ -8,7 +8,7 @@ const initialState = {
   choosedHouse: null,
 };
 
-export const housesReducer = (state = initialState, action) => {
+const housesReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.FETCH_HOUSES_START:
       return {
@@ -42,3 +42,5 @@ export const housesReducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default housesReducer;

@@ -1,12 +1,13 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
 
-function MainLayout(props) {
+function MainLayout({ children }) {
   return (
     <>
-      <Header/>
-      {props.children}
+      <Header />
+      {children}
       <Footer />
     </>
   );

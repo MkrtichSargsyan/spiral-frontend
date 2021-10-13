@@ -13,7 +13,7 @@ import footerbg from '../images/footerbg.png';
 function Footer() {
   return (
     <footer className="relative md:h-96">
-      <div className="w-full bottom-0 h-full bg-black absolute z-10 opacity-95"></div>
+      <div className="w-full bottom-0 h-full bg-black absolute z-10 opacity-95" />
       <div className="absolute bottom-0 w-full h-full">
         <img className="w-full h-full logo" src={footerbg} alt="footerbg" />
       </div>
@@ -66,7 +66,11 @@ function Footer() {
           </div>
           <div className="flex-1 mb-4 md:mb-0">
             <p className="text-white md:w-1/2 m-auto text-center">
-              © 2021 West & Woodall Real Estate <br /> All Rights Reserved
+              © 2021 West & Woodall Real Estate
+              {' '}
+              <br />
+              {' '}
+              All Rights Reserved
             </p>
           </div>
         </div>

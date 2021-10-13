@@ -7,22 +7,24 @@ const initialState = {
   flashIsOpen: false,
 };
 
-export const modalReducer = (state = initialState, action) => {
+const modalReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.OPEN_MODAL:
       return {
         ...state,
-        [action.payload]:true
+        [action.payload]: true,
       };
     case types.CLOSE_MODAL:
-        return {
-          ...state, 
-          loginIsOpen:false,
-          registerIsOpen:false,
-          applyIsOpen: false,
-          flashIsOpen:false,
-        };
+      return {
+        ...state,
+        loginIsOpen: false,
+        registerIsOpen: false,
+        applyIsOpen: false,
+        flashIsOpen: false,
+      };
     default:
       return { ...state };
   }
 };
+
+export default modalReducer;

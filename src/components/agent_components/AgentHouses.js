@@ -5,7 +5,7 @@ import HousePreview from '../house_components/HousePreview';
 
 function AgentHouses() {
   const agentHousesList = useSelector(
-    (state) => state.agentsReducer.agentHouses
+    (state) => state.agentsReducer.agentHouses,
   );
 
   return (

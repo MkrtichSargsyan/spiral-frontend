@@ -1,10 +1,10 @@
-import HousesList from '../components/house_components/HousesList';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import HousesList from '../components/house_components/HousesList';
 import Loader from '../components/Loader';
 import re2 from '../images/realEstate/re2.jpeg';
 import { fetchHouses } from '../store/actions';
-import baseUrl from '../endpoints'
+import baseUrl from '../endpoints';
 
 function HousesPage() {
   const dispatch = useDispatch();
@@ -31,7 +31,7 @@ function HousesPage() {
             Homes for Sale
           </h1>
         </div>
-        <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
+        <div className="w-full h-full bg-black absolute z-10 opacity-75" />
       </section>
 
       <section className="md:p-20 bg-gray-300">

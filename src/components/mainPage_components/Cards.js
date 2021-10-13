@@ -22,7 +22,7 @@ function Cards() {
         icon={agentIcon}
         iconName="agentIcon"
         title="Our Agents"
-        description="Our large team of agents is among the most experienced and 
+        description="Our large team of agents is among the most experienced and
                       knowledgeable in the area and are ready to put our expertise to work for you."
         buttonText="MEET THE TEAM"
         link="/agents"

@@ -1,180 +1,139 @@
-import * as types from '../store/types';
-
 import axios from 'axios';
+import * as types from './types';
 
-export const fetchAgents = (url) => {
-  return async (dispatch) => {
-    dispatch(fetchAgentsStart());
+const fetchAgentsStart = () => ({
+  type: types.FETCH_AGENTS_START,
+});
 
-    try {
-      const response = await axios.get(url);
-      dispatch(fetchAgentsSuccess(response.data));
-    } catch (e) {
-      dispatch(fetchAgentsError(e));
-    }
-  };
-};
+const fetchAgentsSuccess = (agentsList) => ({
+  type: types.FETCH_AGENTS_SUCCESS,
+  agentsList,
+});
 
-const fetchAgentsStart = () => {
-  return {
-    type: types.FETCH_AGENTS_START,
-  };
-};
+const fetchAgentsError = (e) => ({
+  type: types.FETCH_AGENTS_ERROR,
+  error: e,
+});
 
-const fetchAgentsSuccess = (agentsList) => {
-  return {
-    type: types.FETCH_AGENTS_SUCCESS,
-    agentsList,
-  };
-};
+export const fetchAgents = (url) => async (dispatch) => {
+  dispatch(fetchAgentsStart());
 
-const fetchAgentsError = (e) => {
-  return {
-    type: types.FETCH_AGENTS_ERROR,
-    error: e,
-  };
+  try {
+    const response = await axios.get(url);
+    dispatch(fetchAgentsSuccess(response.data));
+  } catch (e) {
+    dispatch(fetchAgentsError(e));
+  }
 };
 
 // choose agent
 
-export const chooseAgent = (choosedAgent) => {
-  return {
-    type: types.CHOOSE_AGENT,
-    choosedAgent,
-  };
-};
+export const chooseAgent = (choosedAgent) => ({
+  type: types.CHOOSE_AGENT,
+  choosedAgent,
+});
 
 // fetch agent houses
 
-export const fetchAgentHouses = (url) => {
-  return async (dispatch) => {
-    try {
-      const response = await axios.get(url);
-      dispatch(fetchAgentHousesSuccess(response.data));
-    } catch (e) {
-      console.log('show error');
-    }
-  };
+const fetchAgentByIdSuccess = (choosedAgent) => ({
+  type: types.FETCH_AGENT_BY_ID,
+  choosedAgent,
+});
+
+export const fetchAgentById = (url) => async (dispatch) => {
+  try {
+    const response = await axios.get(url);
+    dispatch(fetchAgentByIdSuccess(response.data));
+  } catch (e) {
+    console.log(e);
+  }
 };
 
-const fetchAgentHousesSuccess = (agentHousesList) => {
-  return {
-    type: types.FETCH_AGENTS_HOUSES_SUCCESS,
-    agentHousesList,
-  };
-};
+const fetchAgentHousesSuccess = (agentHousesList) => ({
+  type: types.FETCH_AGENTS_HOUSES_SUCCESS,
+  agentHousesList,
+});
 
-export const fetchAgentById = (url) => {
-  return async (dispatch) => {
-    try {
-      const response = await axios.get(url);
-      dispatch(fetchAgentByIdSuccess(response.data));
-    } catch (e) {
-      console.log(e);
-    }
-  };
-};
-
-const fetchAgentByIdSuccess = (choosedAgent) => {
-  return {
-    type: types.FETCH_AGENT_BY_ID,
-    choosedAgent,
-  };
+export const fetchAgentHouses = (url) => async (dispatch) => {
+  try {
+    const response = await axios.get(url);
+    dispatch(fetchAgentHousesSuccess(response.data));
+  } catch (e) {
+    // console.log('show error');
+  }
 };
 
 // fetch houses
 
-export const fetchHouses = (url) => {
-  return async (dispatch) => {
-    dispatch(fetchHousesStart());
+const fetchHousesStart = () => ({
+  type: types.FETCH_HOUSES_START,
+});
 
-    try {
-      const response = await axios.get(url);
-      dispatch(fetchHousesSuccess(response.data));
-    } catch (e) {
-      dispatch(fetchHousesError(e));
-    }
-  };
-};
+const fetchHousesSuccess = (housesList) => ({
+  type: types.FETCH_HOUSES_SUCCESS,
+  housesList,
+});
 
-const fetchHousesStart = () => {
-  return {
-    type: types.FETCH_HOUSES_START,
-  };
-};
+const fetchHousesError = (e) => ({
+  type: types.FETCH_HOUSES_ERROR,
+  error: e,
+});
 
-const fetchHousesSuccess = (housesList) => {
-  return {
-    type: types.FETCH_HOUSES_SUCCESS,
-    housesList,
-  };
-};
+export const fetchHouses = (url) => async (dispatch) => {
+  dispatch(fetchHousesStart());
 
-const fetchHousesError = (e) => {
-  return {
-    type: types.FETCH_HOUSES_ERROR,
-    error: e,
-  };
+  try {
+    const response = await axios.get(url);
+    dispatch(fetchHousesSuccess(response.data));
+  } catch (e) {
+    dispatch(fetchHousesError(e));
+  }
 };
 
 //  choose house id
 
-export const chooseHouse = (choosedHouseId) => {
-  return {
-    type: types.CHOOSE_HOUSE,
-    choosedHouseId,
-  };
-};
+export const chooseHouse = (choosedHouseId) => ({
+  type: types.CHOOSE_HOUSE,
+  choosedHouseId,
+});
 
 // fetch house by id
 
-export const fetchHouseById = (url) => {
-  return async (dispatch) => {
-    try {
-      const response = await axios.get(url);
-      dispatch(fetchHouseByIdSuccess(response.data));
-    } catch (e) {
-      console.log(e);
-    }
-  };
-};
+const fetchHouseByIdSuccess = (choosedHouse) => ({
+  type: types.FETCH_HOUSE_BY_ID,
+  choosedHouse,
+});
 
-const fetchHouseByIdSuccess = (choosedHouse) => {
-  return {
-    type: types.FETCH_HOUSE_BY_ID,
-    choosedHouse,
-  };
+export const fetchHouseById = (url) => async (dispatch) => {
+  try {
+    const response = await axios.get(url);
+    dispatch(fetchHouseByIdSuccess(response.data));
+  } catch (e) {
+    // console.log(e);
+  }
 };
 
 // save user
 
-export const saveUser = (user) => {
-  return {
-    type: types.SAVE_USER,
-    user,
-  };
-};
+export const saveUser = (user) => ({
+  type: types.SAVE_USER,
+  user,
+});
 
 // save token
 
-export const saveToken = (token) => {
-  return {
-    type: types.SAVE_TOKEN,
-    token,
-  };
-};
+export const saveToken = (token) => ({
+  type: types.SAVE_TOKEN,
+  token,
+});
 
 // modal actions
 
-export const openModal = (modalType) => {
-  return {
-    type: types.OPEN_MODAL,
-    payload: modalType,
-  };
-};
+export const openModal = (modalType) => ({
+  type: types.OPEN_MODAL,
+  payload: modalType,
+});
 
-export const closeModal = () => {
-  return {
-    type: types.CLOSE_MODAL,
-  };
-};
+export const closeModal = () => ({
+  type: types.CLOSE_MODAL,
+});

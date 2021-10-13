@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 import baseUrl from '../endpoints';
-import { Backdrop } from './Backdrop';
+import Backdrop from './Backdrop';
 import { closeModal, saveToken, saveUser } from '../store/actions';
 
 function Register() {
@@ -17,19 +18,19 @@ function Register() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    let data = {
-      name: name,
-      email: email,
-      password: password,
+    const data = {
+      name,
+      email,
+      password,
     };
 
-    let config = {
+    const config = {
       method: 'post',
       url: `${baseUrl}/users`,
       headers: {
         'Content-Type': 'application/json',
       },
-      data: data,
+      data,
     };
 
     if (password && password.length > 5 && name && email) {
@@ -54,7 +55,7 @@ function Register() {
   return (
     <>
       <Backdrop />
-      <form className={'modal shadow-md'} onSubmit={(e) => handleSubmit(e)}>
+      <form className="modal shadow-md" onSubmit={(e) => handleSubmit(e)}>
         {error && <div className="text-red-600">{error}</div>}
         <div className="pt-6 flex flex-col">
           <div className="mb-4">

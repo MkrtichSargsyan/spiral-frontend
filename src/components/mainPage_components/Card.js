@@ -28,7 +28,8 @@ function Card({
 
       <Link
         to={link}
-        className={`${color} hover:${colorHover} transition text-white duration-500 ease-in-out cursor-pointer w-full p-5`}
+        className={`${color} hover:${colorHover} transition 
+        text-white duration-500 ease-in-out cursor-pointer w-full p-5`}
       >
         {buttonText}
       </Link>

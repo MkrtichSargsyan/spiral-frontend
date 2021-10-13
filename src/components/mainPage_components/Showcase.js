@@ -1,10 +1,12 @@
+/* eslint-disable no-plusplus */
+/* eslint-disable prefer-const */
 import React, { useEffect, useState } from 'react';
-import re1 from '../../images/realEstate/re1.jpg'
+import re1 from '../../images/realEstate/re1.jpg';
 import re2 from '../../images/realEstate/re2.jpeg';
 import re3 from '../../images/realEstate/re3.jpg';
 import re4 from '../../images/realEstate/re4.jpg';
 import MyInput from '../../ui_kits/MyInput';
-import Cards from '../mainPage_components/Cards';
+import Cards from './Cards';
 
 function Showcase() {
   const bgImages = [re1, re2, re3, re4];
@@ -23,7 +25,7 @@ function Showcase() {
 
   return (
     <section
-      className="md:bg-cover showcase bg-no-repeat flex justify-center flex-col items-center relative"
+      className="md:h-screen md:bg-cover showcase bg-no-repeat flex justify-center flex-col items-center relative"
       style={{
         width: '100%',
         transition: 'all 1s ease-in-out',
@@ -40,7 +42,7 @@ function Showcase() {
         </div>
       </div>
 
-      <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
+      <div className="w-full h-full bg-black absolute z-10 opacity-75" />
 
       <Cards />
     </section>

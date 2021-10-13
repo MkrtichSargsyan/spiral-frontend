@@ -5,7 +5,7 @@ const initialState = {
   token: '',
 };
 
-export const authReducer = (state = initialState, action) => {
+const authReducer = (state = initialState, action) => {
   switch (action.type) {
     case types.SAVE_USER:
       return {
@@ -21,3 +21,5 @@ export const authReducer = (state = initialState, action) => {
       return { ...state };
   }
 };
+
+export default authReducer;

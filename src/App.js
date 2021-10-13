@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Route, Switch } from 'react-router';
+import { Route, Switch } from 'react-router-dom';
+import axios from 'axios';
 import MainLayout from './layouts/MainLayout';
 import AboutUsPage from './pages/AboutUs.page';
 import AgentPage from './pages/Agent.page';
@@ -10,7 +11,6 @@ import HousesPage from './pages/Houses.page';
 import MainPage from './pages/Main.page';
 
 import { saveUser } from './store/actions';
-import axios from 'axios';
 
 import baseUrl from './endpoints';
 import UserPage from './pages/User.page';
@@ -20,9 +20,8 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    console.log('token',token);
     if (token && token !== 'undefined') {
-      let config = {
+      const config = {
         method: 'get',
         url: `${baseUrl}/auto_login`,
         headers: {
@@ -31,7 +30,6 @@ function App() {
         },
       };
 
-      // axios(config).then((res) => console.log(res));
       axios(config).then((res) => dispatch(saveUser(res.data)));
     }
   }, [dispatch]);

@@ -4,7 +4,7 @@ import AgentsList from '../components/agent_components/AgentsList';
 import Loader from '../components/Loader';
 import re2 from '../images/realEstate/re2.jpeg';
 import { fetchAgents } from '../store/actions';
-import baseUrl from '../endpoints'
+import baseUrl from '../endpoints';
 
 function AgentsPage() {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ function AgentsPage() {
   return (
     <>
       <section
-      className="w-full relative bg-no-repeat bg-cover flex justify-center flex-col items-center"
+        className="w-full relative bg-no-repeat bg-cover flex justify-center flex-col items-center"
         style={{
           height: '80vh',
           transition: 'all 2s ease-in-out',
@@ -30,7 +30,7 @@ function AgentsPage() {
         <div className="text-center z-40 w-full flex flex-col items-center">
           <h1 className="text-6xl md:text-8xl text-white mb-3 font-caramel">Our Agents</h1>
         </div>
-        <div className="w-full h-full bg-black absolute z-10 opacity-75"></div>
+        <div className="w-full h-full bg-black absolute z-10 opacity-75" />
       </section>
       <section className="py-20 md:px-20 bg-gray-300">
         {loading ? <Loader /> : <AgentsList allAgents={agents} />}

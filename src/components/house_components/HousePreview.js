@@ -1,15 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Tilt from '../../ui_kits/Tilt';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
+import Tilt from '../../ui_kits/Tilt';
 
 import houseIcon from '../../images/house_icon.png';
 import bedroom from '../../images/houseIcons/bedroom.png';
 import bathroom from '../../images/houseIcons/bathroom.png';
-import { Link } from 'react-router-dom';
 import { chooseHouse } from '../../store/actions';
 
-function HousePreview({ id, pictures, price, address, bedrooms, bathrooms }) {
+function HousePreview({
+  id, pictures, price, address, bedrooms, bathrooms,
+}) {
   const dispatch = useDispatch();
   const options = {
     scale: 1.05,
@@ -40,18 +42,29 @@ function HousePreview({ id, pictures, price, address, bedrooms, bathrooms }) {
                     alt="house_icon"
                     className="w-10 h-10 mr-3"
                   />
-                  <p className="font-bold">$ {price}</p>
+                  <p className="font-bold">
+                    $
+                    {price}
+                  </p>
                 </div>
                 <p className="w-2/3">{address}</p>
               </div>
               <div className="bg-gray-100 w-full px-8 py-2 rounded-lg flex justify-around">
                 <div className="flex">
                   <img src={bedroom} alt="bedroom" className="w-5 h-5 mr-3" />
-                  <span>{bedrooms} bd</span>
+                  <span>
+                    {bedrooms}
+                    {' '}
+                    bd
+                  </span>
                 </div>
                 <div className="flex">
                   <img src={bathroom} alt="bathroom" className="w-5 h-5 mr-3" />
-                  <span>{bathrooms} ba</span>
+                  <span>
+                    {bathrooms}
+                    {' '}
+                    ba
+                  </span>
                 </div>
               </div>
             </div>
