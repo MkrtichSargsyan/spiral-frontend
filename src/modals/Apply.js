@@ -27,7 +27,7 @@ function Apply() {
     if (token && token !== 'undefined') {
       let config = {
         method: 'post',
-        url: `${baseUrl}apply`,
+        url: `${baseUrl}/apply`,
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

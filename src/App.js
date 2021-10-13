@@ -20,16 +20,18 @@ function App() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
+    console.log('token',token);
     if (token && token !== 'undefined') {
       let config = {
         method: 'get',
-        url: `${baseUrl}auto_login`,
+        url: `${baseUrl}/auto_login`,
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
       };
 
+      // axios(config).then((res) => console.log(res));
       axios(config).then((res) => dispatch(saveUser(res.data)));
     }
   }, [dispatch]);

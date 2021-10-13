@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import re4 from '../images/realEstate/re4.jpg';
 import { fetchAgentById, fetchHouseById } from '../store/actions';
+import baseUrl from '../endpoints';
 
 import { openModal } from '../store/actions';
 import Apply from '../modals/Apply';
@@ -23,19 +24,15 @@ function HousePage() {
   const applyIsOpen = useSelector((state) => state.modalReducer.applyIsOpen);
   const houseId = useSelector((state) => state.housesReducer.choosedHouseId);
 
-  const token = localStorage.getItem('token');
-
   useEffect(() => {
-    dispatch(fetchHouseById(`http://localhost:3000/houses/${houseId}`));
+    dispatch(fetchHouseById(`${baseUrl}/houses/${houseId}`));
   }, [dispatch, houseId]);
 
   const house = useSelector((state) => state.housesReducer.choosedHouse);
 
   useEffect(() => {
     if (house) {
-      dispatch(
-        fetchAgentById(`http://localhost:3000/agents/${house.agent_id}`)
-      );
+      dispatch(fetchAgentById(`${baseUrl}/agents/${house.agent_id}`));
     }
   }, [dispatch, house]);
 
@@ -166,15 +163,14 @@ function HousePage() {
             <p className="border-2 p-2 px-10 mb-2">{agent.number}</p>
             <button
               className="animButton"
-              onClick={() =>
-                dispatch(
-                  openModal(
-                    token && token !== 'undefined'
-                      ? 'applyIsOpen'
-                      : 'loginIsOpen'
-                  )
-                )
-              }
+              onClick={() => {
+                const token = localStorage.getItem('token');
+                if (token && token !== 'undefined') {
+                  dispatch(openModal('applyIsOpen'));
+                } else {
+                  dispatch(openModal('loginIsOpen'));
+                }
+              }}
             >
               <span>Contact agent</span>
             </button>

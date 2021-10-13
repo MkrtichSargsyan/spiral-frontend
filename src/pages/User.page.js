@@ -26,13 +26,14 @@ function UserPage() {
     if (token && token !== 'undefined') {
       let config = {
         method: 'get',
-        url: `${baseUrl}show_appointments`,
+        url: `${baseUrl}/show_appointments`,
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',
         },
       };
 
+      // axios(config).then((res) => console.log(res));
       axios(config).then((res) => setAppointments(res.data));
     }
   }, [appointments]);
@@ -48,7 +49,7 @@ function UserPage() {
     if (token && token !== 'undefined') {
       let config = {
         method: 'delete',
-        url: `${baseUrl}remove_appointment`,
+        url: `${baseUrl}/remove_appointment`,
         headers: {
           Authorization: `Bearer ${token}`,
           'Content-Type': 'application/json',

@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import AgentHouses from '../components/agent_components/AgentHouses';
 import re4 from '../images/realEstate/re4.jpg';
 import { chooseAgent, fetchAgentHouses } from '../store/actions';
+import baseUrl from '../endpoints'
 
 function AgentPage(props) {
   const dispatch = useDispatch();
@@ -11,7 +12,7 @@ function AgentPage(props) {
 
   useEffect(() => {
     dispatch(chooseAgent(props.location.state));
-    dispatch(fetchAgentHouses(`http://localhost:3000/agents/${id}/houses`));
+    dispatch(fetchAgentHouses(`${baseUrl}/agents/${id}/houses`));
     window.scrollTo(0, 0);
   }, [dispatch, id, props.location.state]);
 

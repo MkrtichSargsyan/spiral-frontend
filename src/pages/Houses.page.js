@@ -4,12 +4,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import Loader from '../components/Loader';
 import re2 from '../images/realEstate/re2.jpeg';
 import { fetchHouses } from '../store/actions';
+import baseUrl from '../endpoints'
 
 function HousesPage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchHouses('http://localhost:3000/houses'));
+    dispatch(fetchHouses(`${baseUrl}/houses`));
   }, [dispatch]);
 
   const houses = useSelector((state) => state.housesReducer.houses);

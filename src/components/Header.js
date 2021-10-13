@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import logo from '../images/logo_transparent.png';
-import { openModal, saveUser } from '../store/actions';
+import { openModal, saveToken, saveUser } from '../store/actions';
 
 import Login from '../modals/Login';
 import Register from '../modals/Register';
@@ -20,7 +20,11 @@ function Header() {
   const signOut = () => {
     localStorage.removeItem('token');
     dispatch(saveUser(null));
+    dispatch(saveToken(null));
+    
   };
+
+  console.log(user);
 
   return (
     <>
