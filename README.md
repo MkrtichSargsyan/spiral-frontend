@@ -1,71 +1,110 @@
-# Getting Started with Create React App
+# Spiral frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this application, I have an appointment app for a Spiral's office. The user can choose from a list of houses and choose an appointment with the agent who is selling that house. The user logs in and signs up to the application using Json Web Token.
 
-## Available Scripts
+To build this application I used:
 
-In the project directory, you can run:
+ - Javascript ES6;
+ - Html/CSS;
+ - Tailwind.CSS
+ - React.js, React Hooks, React Router;
+ - Redux, Redux-thunk;
+ - Jest;
+ - Linters ( eslint and stylelint)
+ - Netlify
 
-### `yarn start`
+## Live Demo
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Link for back-end repository
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+[https://github.com/MkrtichSargsyan/spiral-backend](Link for back-end repository)
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `yarn build`
+![2021-10-14 09 49 50 localhost d50c33ba3540](https://user-images.githubusercontent.com/31889642/137259725-04e68214-c462-4756-a524-dd168a92e21a.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![2021-10-14 09 50 42 localhost e558db35177a](https://user-images.githubusercontent.com/31889642/137259646-84e2542f-12a0-4324-b062-777513f8feb5.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Features
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+ - Log in, log out and sign up
+ - Show the list of all houses;
+ - Show the list of all agents;
+ - Show the list of houses for every agents;
+ - Show the list of the appointments of the user;
+ - Create a new appointment;
 
-### `yarn eject`
+## How to use the application
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Application has secure login and signup. A user must provide e-mail and password while logging in. On Sign Up User must provide a username, e-mail and password.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+In this Application, on the houses page, the user can see all the houses. When the User creates a new account or sign in with their account they can choose any agent to make appointment with him.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+User can click any of the listed houses to get a detailed information about avery house. User can make an appointment from both agents listing page and houses listing page. User also has access to USER PAGE where they can see their appointments.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Getting started
 
-## Learn More
+To get a local copy of the repository please run the following commands on your terminal:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+  - ```git clone git@github.com:MkrtichSargsyan/spiral-frontend.git```
+  - ```cd spiral-frontend```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Launch the application
 
-### Code Splitting
+After making the local copy of the repository:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ - get inside the repository folder;
+ - setup the dependencies of the project: in the terminal run: ```npm install```
+ - enter the command: ```npm start``` to start the server in localhost.
+ - then you get the application in the localhost in your web browser.
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## About
 
-### Making a Progressive Web App
+In this application, I have an appointment app for a Spiral's office. The user can choose from a list of houses and choose an appointment with the agent who is selling that house. The user logs in and signs up to the application using Json Web Token.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+To build this application we used:
 
-### Advanced Configuration
+ - Ruby on Rails;
+ - Active Storage;
+ - Postgresql database;
+ - Json Web Token (jwt);
+ - (bcrypt) to crypt password;
+ - Rspec to test the project;
+ - Linters ( Rubocop )
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
+## Test the application
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+After making the local copy of the repository:
 
-### `yarn build` fails to minify
+ - get inside the repository folder;
+ - setup the dependencies of the project: in the terminal run: ```npm install```
+ - enter the command: ```npm run test``` to test the application.
+ - then you get the application tested.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-# spiral-frontend
+In this application I test the components using the snapshots and I test the logical functions using jest.
+
+Feel free to reach out. I'm always happy to connect :slightly_smiling_face:
+
+## Author
+
+👤 **Mkrtich Sargsyan**
+
+[<code><img height="26" src="https://cdn.iconscout.com/icon/free/png-256/github-153-675523.png"></code>](https://github.com/MkrtichSargsyan)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/sco/thumb/9/9f/Twitter_bird_logo_2012.svg/1200px-Twitter_bird_logo_2012.svg.png"></code>](https://twitter.com/MkrtichSargsyan)
+[<code><img height="26" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"></code>](https://www.linkedin.com/in/mkrtich-sargsyan/)
+[<code><img height="26" src="https://cdn4.iconfinder.com/data/icons/free-colorful-icons/360/gmail.png"></code>](mailto:mkrtichsargsyan24@gmail.com)
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+Design idea by [https://westandwoodall.com/listings/160952652?street=3604%20Sunningdale%20Way&city=Durham&state=NC&zip=27707&image=%2F%2Fcdnparap120.paragonrels.com%2FParagonImages%2FProperty%2Fp12%2FTRIANGLE%2F2399064%2F0%2F0%2F0%2F56d8912e9dda09c2aeca5fe130db54b2%2F2%2Fb9d97fb02a185f7f50be77e432625c98%2F2399064.JPG](West && Woodall)
+
+- <a href="https://www.theodinproject.com/" target="_blank">The Odin Project</a>
+- <a href="https://www.stackoverflow.com/" target="_blank">Stackoverflow</a>
+- <a href="https://youtube.com/" target="_blank">YouTube player page</a>
