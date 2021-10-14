@@ -17,7 +17,7 @@ To build this application I used:
 
 ## Link for back-end repository
 
-[https://github.com/MkrtichSargsyan/spiral-backend](Link for back-end repository)
+[Link for back-end repository](https://github.com/MkrtichSargsyan/spiral-backend)
 
 
 ## Screenshots
@@ -103,7 +103,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-Design idea by [https://westandwoodall.com/listings/160952652?street=3604%20Sunningdale%20Way&city=Durham&state=NC&zip=27707&image=%2F%2Fcdnparap120.paragonrels.com%2FParagonImages%2FProperty%2Fp12%2FTRIANGLE%2F2399064%2F0%2F0%2F0%2F56d8912e9dda09c2aeca5fe130db54b2%2F2%2Fb9d97fb02a185f7f50be77e432625c98%2F2399064.JPG](West && Woodall)
+
+Design idea by [West && Woodall](https://westandwoodall.com/listings/160952652?street=3604%20Sunningdale%20Way&city=Durham&state=NC&zip=27707&image=%2F%2Fcdnparap120.paragonrels.com%2FParagonImages%2FProperty%2Fp12%2FTRIANGLE%2F2399064%2F0%2F0%2F0%2F56d8912e9dda09c2aeca5fe130db54b2%2F2%2Fb9d97fb02a185f7f50be77e432625c98%2F2399064.JPG)
+
 
 - <a href="https://www.theodinproject.com/" target="_blank">The Odin Project</a>
 - <a href="https://www.stackoverflow.com/" target="_blank">Stackoverflow</a>
