@@ -23,8 +23,6 @@ function Header() {
     dispatch(saveToken(null));
   };
 
-  console.log(user);
-
   return (
     <>
       {loginIsOpen && <Login />}

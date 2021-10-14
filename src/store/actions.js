@@ -41,12 +41,8 @@ const fetchAgentByIdSuccess = (choosedAgent) => ({
 });
 
 export const fetchAgentById = (url) => async (dispatch) => {
-  try {
-    const response = await axios.get(url);
-    dispatch(fetchAgentByIdSuccess(response.data));
-  } catch (e) {
-    console.log(e);
-  }
+  const response = await axios.get(url);
+  dispatch(fetchAgentByIdSuccess(response.data));
 };
 
 const fetchAgentHousesSuccess = (agentHousesList) => ({
@@ -55,12 +51,8 @@ const fetchAgentHousesSuccess = (agentHousesList) => ({
 });
 
 export const fetchAgentHouses = (url) => async (dispatch) => {
-  try {
-    const response = await axios.get(url);
-    dispatch(fetchAgentHousesSuccess(response.data));
-  } catch (e) {
-    // console.log('show error');
-  }
+  const response = await axios.get(url);
+  dispatch(fetchAgentHousesSuccess(response.data));
 };
 
 // fetch houses
@@ -105,12 +97,8 @@ const fetchHouseByIdSuccess = (choosedHouse) => ({
 });
 
 export const fetchHouseById = (url) => async (dispatch) => {
-  try {
-    const response = await axios.get(url);
-    dispatch(fetchHouseByIdSuccess(response.data));
-  } catch (e) {
-    // console.log(e);
-  }
+  const response = await axios.get(url);
+  dispatch(fetchHouseByIdSuccess(response.data));
 };
 
 // save user

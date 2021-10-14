@@ -35,11 +35,9 @@ function Apply() {
           house_id: choosedHouse.id,
         },
       };
-      try {
-        await axios(config);
-      } catch (error) {
-        alert(error);
-      }
+
+      await axios(config);
+
       history.push(`/users/${user.name}`);
       dispatch(closeModal());
       notify();

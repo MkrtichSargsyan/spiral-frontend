@@ -56,7 +56,7 @@ describe('actions', () => {
   it('should have a type of CLOSE_MODAL', () => {
     expect(types.CLOSE_MODAL).toEqual('CLOSE_MODAL');
   });
-  
+
   it('should have a type of SAVE_USER', () => {
     expect(types.SAVE_USER).toEqual('SAVE_USER');
   });

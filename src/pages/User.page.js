@@ -58,11 +58,7 @@ function UserPage() {
           appointment_id: id,
         },
       };
-      try {
-        await axios(config).then(notify());
-      } catch (error) {
-        alert(error);
-      }
+      await axios(config).then(notify());
     }
   };
 
