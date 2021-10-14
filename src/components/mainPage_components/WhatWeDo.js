@@ -7,7 +7,7 @@ function WhatWeDo() {
     <section
       className="mb-28 sm:mb-0 md:mb-44 lg:mb-0 bg-gray-300 w-full flex flex-col md:flex-row items-center px-2 md:px-10 min-h-screen"
       style={{
-        height: '130vh',
+        height: '110vh',
       }}
     >
       <div
