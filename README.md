@@ -17,6 +17,8 @@ To build this application I used:
 
 ## Live Demo
 
+[The live demo link](https://nostalgic-wilson-91baa1.netlify.app)
+
 ## Link for back-end repository
 
 [Link for back-end repository](https://github.com/MkrtichSargsyan/spiral-backend)
@@ -60,7 +62,7 @@ After making the local copy of the repository:
  - setup the dependencies of the project: in the terminal run: ```npm install```
  - enter the command: ```npm start``` to start the server in localhost.
  - then you get the application in the localhost in your web browser.
- 
+
 
 ## Test the application
 
