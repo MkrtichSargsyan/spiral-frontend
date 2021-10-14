@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Carousel } from 'react-responsive-carousel';
@@ -58,7 +59,7 @@ function HousePage() {
         )}
         <div className="w-full h-full bg-black absolute z-10 opacity-75" />
       </section>
-      {house ? (
+      {house && (
         <>
           <section className="bg-gray-300 flex justify-center">
             <Carousel
@@ -92,9 +93,9 @@ function HousePage() {
 
                 <h3 className="text-gray-500 mt-8">FEATURES</h3>
                 <ol type="i" className="flex flex-wrap justify-around my-4">
-                  {house.features.map((feature) => (
+                  {house.features.map((feature, i) => (
                     <li
-                      key={house.id}
+                      key={house.id + i}
                       className="w-1/2 list-item list-disc list-inside mb-2 text-lg text-gray-500"
                     >
                       {feature}
@@ -152,8 +153,6 @@ function HousePage() {
             </div>
           </section>
         </>
-      ) : (
-        <Loader />
       )}
       {/* agent section */}
 

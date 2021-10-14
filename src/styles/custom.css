@@ -61,15 +61,14 @@ hr {
 @media only screen and (max-width: 910px) {
   .modal {
     width: 50%;
-    left: 27%
+    left: 27%;
   }
 }
-
 
 @media only screen and (max-width: 600px) {
   .modal {
     width: 80%;
-    left: 10%
+    left: 10%;
   }
 }
 
@@ -78,14 +77,11 @@ hr {
     transform: translateY(-50%);
     opacity: 0;
   }
+
   to {
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-.one:hover span:last-child {
-  width: 100%;
 }
 
 .two:hover span {
@@ -96,6 +92,50 @@ hr {
   height: 100%;
 }
 
-footer{
+.one:hover span:last-child {
+  width: 100%;
+}
+
+footer {
   height: 520px;
+}
+
+/* showcase animation */
+
+.showcase {
+  width: 100%;
+  background-image: url('../images/realEstate/re1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 5s;
+  animation-name: animate;
+  animation-duration: 15s;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animate {
+  0% {
+    background-image: url('../images/realEstate/re2.jpeg');
+  }
+
+  25% {
+    background-image: url('../images/realEstate/re3.jpg');
+  }
+
+  50% {
+    background-image: url('../images/realEstate/re2.jpeg');
+  }
+
+  75% {
+    background-image: url('../images/realEstate/re4.jpg');
+  }
+
+  100% {
+    background-image: url('../images/realEstate/re1.jpg');
+  }
 }

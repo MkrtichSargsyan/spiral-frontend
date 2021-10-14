@@ -2,7 +2,7 @@
   border-radius: 4px;
   background-color: #141212;
   border: none;
-  color: #ffffff;
+  color: #fff;
   text-align: center;
   font-size: 18px;
   padding: 15px;
@@ -19,7 +19,7 @@
   transition: 0.5s;
 }
 
-.animButton span:after {
+.animButton span::after {
   content: '\00bb';
   position: absolute;
   opacity: 0;
@@ -32,7 +32,7 @@
   padding-right: 25px;
 }
 
-.animButton:hover span:after {
+.animButton:hover span::after {
   opacity: 1;
   right: 0;
 }
