@@ -2,6 +2,8 @@
 
 In this application, I have an appointment app for a Spiral's office. The user can choose from a list of houses and choose an appointment with the agent who is selling that house. The user logs in and signs up to the application using Json Web Token.
 
+## About
+
 To build this application I used:
 
  - Javascript ES6;
@@ -58,22 +60,7 @@ After making the local copy of the repository:
  - setup the dependencies of the project: in the terminal run: ```npm install```
  - enter the command: ```npm start``` to start the server in localhost.
  - then you get the application in the localhost in your web browser.
-
-
-## About
-
-In this application, I have an appointment app for a Spiral's office. The user can choose from a list of houses and choose an appointment with the agent who is selling that house. The user logs in and signs up to the application using Json Web Token.
-
-To build this application we used:
-
- - Ruby on Rails;
- - Active Storage;
- - Postgresql database;
- - Json Web Token (jwt);
- - (bcrypt) to crypt password;
- - Rspec to test the project;
- - Linters ( Rubocop )
-
+ 
 
 ## Test the application
 
