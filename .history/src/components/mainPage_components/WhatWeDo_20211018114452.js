@@ -4,9 +4,9 @@ import whatWeDoBg from '../../images/whatWeDo.jpeg';
 
 function WhatWeDo() {
   return (
-    <section className="mb-40 md:mb-44 lg:mb-0 bg-gray-300 w-full flex flex-col md:flex-row items-center px-2 md:px-10 h-screen">
+    <section className="md:mb-44 lg:mb-0 bg-gray-300 w-full flex flex-col md:flex-row items-center px-2 md:px-10 h-screen">
       <div
-        className="w-full lg:w-10/12 flex items-center h-96 md:h-5/6 relative"
+        className="w-full lg:w-11/12 flex items-center h-96 md:h-5/6 relative"
         style={{
           backgroundSize: 'cover',
           backgroundImage: `url(${whatWeDoBg})`,
@@ -29,7 +29,7 @@ function WhatWeDo() {
           lg:top-auto
           lg:my-auto
           lg:h-4/5
-          lg:left-2/3"
+          lg:-left-60"
         >
           <h3 className="mb-6 font-serif">WHAT WE DO</h3>
           <p className="mb-6 font-serif">
