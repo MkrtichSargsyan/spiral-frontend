@@ -4,12 +4,7 @@ import whatWeDoBg from '../../images/whatWeDo.jpeg';
 
 function WhatWeDo() {
   return (
-    <section
-      className="mb-28 sm:mb-0 md:mb-44 lg:mb-0 bg-gray-300 w-full flex flex-col md:flex-row items-center px-2 md:px-10 min-h-screen"
-      style={{
-        height: '110vh',
-      }}
-    >
+    <section className="-mb-60 md:mb-44 lg:mb-0 bg-gray-300 w-full flex flex-col md:flex-row items-center px-2 md:px-10 h-screen">
       <div
         className="w-full lg:w-4/5 flex items-center h-96 md:h-5/6 relative"
         style={{
