@@ -1,6 +1,7 @@
 /* eslint-disable react/no-array-index-key */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import { Carousel } from 'react-responsive-carousel';
 import Loader from '../components/Loader';
 import re4 from '../images/realEstate/re4.jpg';
@@ -22,6 +23,10 @@ function HousePage() {
 
   const applyIsOpen = useSelector((state) => state.modalReducer.applyIsOpen);
   const houseId = useSelector((state) => state.housesReducer.choosedHouseId);
+
+  if (!houseId) {
+    return <Redirect to="/houses" />;
+  }
 
   useEffect(() => {
     dispatch(fetchHouseById(`${baseUrl}/houses/${houseId}`));
