@@ -1,0 +1,141 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  position: relative;
+}
+
+body {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+p {
+  font-family: sans-serif;
+}
+
+.font-caramel {
+  font-family: 'Caramel', cursive;
+}
+
+.font-mulish {
+  font-family: 'Mulish', sans-serif;
+}
+
+hr {
+  border-bottom: 2px solid rgb(0, 0, 0);
+}
+
+.showcaseCard:hover {
+  z-index: 4000;
+}
+
+.services li::before {
+  content: '✔ ';
+  font-size: 4vmin;
+  text-indent: -2em;
+}
+
+.bright {
+  filter: brightness(200%);
+}
+
+/* modal */
+
+.modal {
+  position: fixed;
+  z-index: 1102;
+  background-color: #292a2b;
+  color: white;
+  width: 30%;
+  padding: 16px;
+  left: 35%;
+  top: 15%;
+  animation-name: modalFade;
+  animation-duration: 0.9s;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 910px) {
+  .modal {
+    width: 50%;
+    left: 27%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .modal {
+    width: 80%;
+    left: 10%;
+  }
+}
+
+@keyframes modalFade {
+  from {
+    transform: translateY(-50%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.two:hover span {
+  width: 50%;
+}
+
+.three:hover span {
+  height: 100%;
+}
+
+.one:hover span:last-child {
+  width: 100%;
+}
+
+footer {
+  height: 520px;
+}
+
+/* showcase animation */
+
+.showcase {
+  width: 100%;
+  background-image: url('../images/realEstate/re1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: 5s;
+  animation-name: animate;
+  animation-duration: 15s;
+  animation-direction: alternate-reverse;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes animate {
+  0% {
+    background-image: url('../images/realEstate/re2.jpeg');
+  }
+
+  25% {
+    background-image: url('../images/realEstate/re3.jpg');
+  }
+
+  50% {
+    background-image: url('../images/realEstate/re2.jpeg');
+  }
+
+  75% {
+    background-image: url('../images/realEstate/re4.jpg');
+  }
+
+  100% {
+    background-image: url('../images/realEstate/re1.jpg');
+  }
+}
